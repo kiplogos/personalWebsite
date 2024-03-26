@@ -1,7 +1,3 @@
-// $(".about").click(function (event) {
-//   event.preventDefault();
-//   $(".carousel").html($(".showAbout").html());
-// });
 $(document).ready(function () {
   $(".experience").click(function (event) {
     event.preventDefault();

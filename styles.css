@@ -58,8 +58,7 @@ form {
 .nav-link {
   font-family: "Inter Tight", sans-serif;
 }
-.right {
-}
+
 
 .navbar-brand {
   font-size: 30px;
@@ -75,8 +74,7 @@ form {
   font-weight: 400;
   font-style: normal;
 }
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900 */
+
 
 .inter-tight {
   font-family: "Inter Tight", sans-serif;
@@ -86,8 +84,7 @@ form {
 }
 
 footer {
-  /* margin-left: 1%;
-  margin-right: 5%; */
+
   text-align: left;
 }
 
@@ -106,10 +103,7 @@ table {
   padding-top: 20px;
 }
 
-/* .blackCaption {
-  color: black;
-  padding-top: 100px;
-} */
+
 
 .nav2 {
   position: absolute;
