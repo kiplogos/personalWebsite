@@ -19,7 +19,7 @@ $(document).ready(function () {
 
   $(".about").click(function (event) {
     event.preventDefault();
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   });
 
   $(".navbar-toggler").click(function () {
