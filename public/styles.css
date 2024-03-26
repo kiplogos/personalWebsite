@@ -1,0 +1,128 @@
+.container2 {
+  margin-left: 5%;
+  margin-right: 5%;
+  transition: margin 0.7s ease;
+}
+.container {
+  margin-left: 40px;
+}
+.pushed-down {
+  margin-top: 130px;
+}
+nav {
+  height: 120px;
+  position: fixed;
+  z-index: 1000;
+}
+.nav-item {
+  padding-left: 40px;
+}
+/* .navbar-nav {
+  padding-left: 720px;
+} */
+form {
+  padding-left: 170px;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  text-align: center;
+}
+.left a {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  padding: 68px;
+  background-color: #ffff;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 40px;
+  font-style: normal;
+  color: black;
+  transition: background-color 0.4s ease;
+}
+.left a:hover {
+  background-color: beige;
+}
+.left a:active {
+  background-color: chocolate;
+}
+
+.mid {
+  padding-top: 10px;
+}
+
+.nav-link {
+  font-family: "Inter Tight", sans-serif;
+}
+.right {
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.title {
+  font-weight: 500px;
+  color: red;
+}
+.esteban-regular {
+  font-family: "Esteban", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.inter-tight {
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+footer {
+  /* margin-left: 1%;
+  margin-right: 5%; */
+  text-align: left;
+}
+
+footer .li {
+  justify-content: end;
+}
+footer a {
+  text-decoration: none;
+}
+
+.aboutSpan {
+  padding: 30px;
+  font-family: "Inter Tight", sans-serif;
+}
+table {
+  padding-top: 20px;
+}
+
+/* .blackCaption {
+  color: black;
+  padding-top: 100px;
+} */
+
+.nav2 {
+  position: absolute;
+}
+.card-body {
+  text-align: left;
+}
+
+.navbarSupportedContent {
+  float: right;
+}
+
+.navBtn {
+  position: relative;
+  right: inherit;
+}
