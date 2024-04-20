@@ -1,0 +1,36 @@
+
+
+.row {
+    text-align: left;
+    padding-top: 100px;
+}
+.intro {
+    text-align: center;
+}
+
+.mb-3 {
+    margin-top: 15px;
+}
+
+.steelEstimator {
+    text-align: left;
+    color: brown;
+    margin-bottom: 20px;
+    
+}
+
+.display1 {
+    color: brown;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.concreteEstimator {
+    margin-bottom: 20px;
+    width: 75%;
+}
+
+.display2 {
+      color: brown;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}

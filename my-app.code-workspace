@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "../learnReact/my-app"
+	},
+	{
+		"path": "../FundiFinder"
+	},
+	{
+		"path": "../my-cv"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {}
+}
