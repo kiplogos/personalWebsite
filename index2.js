@@ -9,14 +9,32 @@ $(".tool1").click(function (event) {
   $(".concreteEstimator").hide();
   $(".display1").hide();
   $(".intro").hide();
+  $(".sizeSelect").hide();
+  $(".sizeSelect2").hide();
+  $(".sizeSelect3").hide();
+  $(".alert").hide();
+  $(".assumptions").hide();
 });
 
 $(".sectionSelect").change(function () {
   selectedSection = $(this).find("option:selected").text();
   console.log("Selected Section: " + selectedSection);
+  if (selectedSection == "Circular Hollow Section(C.H.S)") {
+    $(".sizeSelect").hide();
+    $(".sizeSelect2").hide();
+    $(".sizeSelect3").show();
+  } else if (selectedSection == "Rectangular Hollow Section (R.H.S)") {
+    $(".sizeSelect").hide();
+    $(".sizeSelect3").hide();
+    $(".sizeSelect2").show();
+  } else if (selectedSection == "Square Hollow Section (S.H.S)") {
+    $(".sizeSelect3").hide();
+    $(".sizeSelect2").hide();
+    $(".sizeSelect").show();
+  }
 });
 
-$(".sizeSelect").change(function () {
+$(".sizeSelect, .sizeSelect2, .sizeSelect3").change(function () {
   selectedSize = $(this).find("option:selected").text();
   console.log("Selected Size: " + selectedSize);
 });
@@ -52,9 +70,16 @@ $(".submit1").click(function (event) {
         var steelWeight = length * xFactor;
         $(".display2").show();
         $(".showSteelWeight").text(steelWeight);
-      } else {
+        return false;
       }
     });
+    if (!matchFound) {
+      $(".alert").show();
+
+      setTimeout(function () {
+        $(".alert").hide();
+      }, 1500);
+    }
   });
 });
 
@@ -71,7 +96,16 @@ $(".mixSelect").change(function () {
   selectedMix = $(this).find("option:selected").text();
   console.log("Selected Mix Ratio: " + selectedMix);
 });
-
+$(".assumptionsButton").click(function (event) {
+  event.preventDefault();
+  $(".assumptions").show();
+  setTimeout(function () {
+    $(".assumptions").hide();
+  }, 7500);
+  // alert(
+  //   "Concrete density: 1440 Kg/m3 Sand Density: 1602 Kg/m3 Aggregate Density: 2400 Kg/m3"
+  // );
+});
 $(".submit2").click(function (event) {
   event.preventDefault();
 

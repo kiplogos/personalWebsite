@@ -374,5 +374,705 @@
     "Thickness (mm)": 6.0,
     "Kgs/6mtr": 162.5,
     "Factor": 27.083
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "30 x 10mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 3.72,
+    "Factor": 0.62
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "30 x 10mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 4.41,
+    "Factor": 0.735
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "30 x 10mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 5.44,
+    "Factor": 0.9067
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "30 x 20mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 4.66,
+    "Factor": 0.7767
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "30 x 20mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 5.54,
+    "Factor": 0.9233
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "30 x 20mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 6.85,
+    "Factor": 1.1417
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 10mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 4.66,
+    "Factor": 0.7767
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 10mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 5.54,
+    "Factor": 0.9233
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 10mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 6.85,
+    "Factor": 1.1417
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 20mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 5.6,
+    "Factor": 0.9333
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 20mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 6.67,
+    "Factor": 1.1117
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 20mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 8.27,
+    "Factor": 1.3783
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 20mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 10.93,
+    "Factor": 1.8217
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 25mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 6.08,
+    "Factor": 1.0133
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 25mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 7.23,
+    "Factor": 1.205
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 25mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 8.97,
+    "Factor": 1.495
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 25mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 11.87,
+    "Factor": 1.9783
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "40 x 25mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 17.52,
+    "Factor": 2.92
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 10mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 5.6,
+    "Factor": 0.9333
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 10mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 6.67,
+    "Factor": 1.1117
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 10mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 8.27,
+    "Factor": 1.3783
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 25mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 7.02,
+    "Factor": 1.17
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 25mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 8.36,
+    "Factor": 1.3933
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 25mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 10.39,
+    "Factor": 1.7317
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 25mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 13.75,
+    "Factor": 2.2917
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "50 x 25mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 20.35,
+    "Factor": 3.3917
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "60 x 40mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 13.92,
+    "Factor": 2.32
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "60 x 40mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 18.46,
+    "Factor": 3.0767
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "60 x 40mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 27.41,
+    "Factor": 4.5683
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "60 x 40mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 36.17,
+    "Factor": 6.0283
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "75 x 50mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 34.48,
+    "Factor": 5.7467
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "75 x 50mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 45.59,
+    "Factor": 7.5983
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "80 x 40mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 16.74,
+    "Factor": 2.79
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "80 x 40mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 22.23,
+    "Factor": 3.705
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "80 x 40mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 33.06,
+    "Factor": 5.51
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "80 x 40mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 43.71,
+    "Factor": 7.285
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "100 x 50mm",
+    "Thickness (mm)": 2.5,
+    "Kgs/6mtr": 34.5,
+    "Factor": 5.75
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "100 x 50mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 41.26,
+    "Factor": 6.8767
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "100 x 50mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 54.26,
+    "Factor": 9.0433
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "100 x 50mm",
+    "Thickness (mm)": 5.0,
+    "Kgs/6mtr": 64.76,
+    "Factor": 10.7933
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "100 x 50mm",
+    "Thickness (mm)": 6.0,
+    "Kgs/6mtr": 77.72,
+    "Factor": 12.9533
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "125 x 75mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 55.39,
+    "Factor": 9.2317
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "125 x 75mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 73.1,
+    "Factor": 12.1833
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "125 x 75mm",
+    "Thickness (mm)": 5.0,
+    "Kgs/6mtr": 88.31,
+    "Factor": 14.7183
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "125 x 75mm",
+    "Thickness (mm)": 6.0,
+    "Kgs/6mtr": 105.98,
+    "Factor": 17.63
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 50mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 55.39,
+    "Factor": 9.2317
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 50mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 73.1,
+    "Factor": 12.1833
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 75mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 62.45,
+    "Factor": 10.4083
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 75mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 82.52,
+    "Factor": 13.7533
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 75mm",
+    "Thickness (mm)": 5.0,
+    "Kgs/6mtr": 100.09,
+    "Factor": 16.6817
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 75mm",
+    "Thickness (mm)": 6.0,
+    "Kgs/6mtr": 120.11,
+    "Factor": 20.0183
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 100mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 69.52,
+    "Factor": 11.5867
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 100mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 91.94,
+    "Factor": 15.3233
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 100mm",
+    "Thickness (mm)": 5.0,
+    "Kgs/6mtr": 111.86,
+    "Factor": 18.6433
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "150 x 100mm",
+    "Thickness (mm)": 6.0,
+    "Kgs/6mtr": 134.24,
+    "Factor": 22.3733
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "200 x 50mm",
+    "Thickness (mm)": 3.0,
+    "Kgs/6mtr": 69.52,
+    "Factor": 11.5867
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "200 x 50mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 91.94,
+    "Factor": 15.3233
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "200 x 100mm",
+    "Thickness (mm)": 4.0,
+    "Kgs/6mtr": 110.78,
+    "Factor": 18.4633
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "200 x 100mm",
+    "Thickness (mm)": 5.0,
+    "Kgs/6mtr": 135.41,
+    "Factor": 22.5683
+  },
+  {
+    "Section": "Rectangular Hollow Section (R.H.S)",
+    "Size": "200 x 100mm",
+    "Thickness (mm)": 6.0,
+    "Kgs/6mtr": 162.5,
+    "Factor": 27.0833
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "16mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 2.36,
+    "Factor": 0.3933
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "16mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 2.83,
+    "Factor": 0.4717
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "16mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 3.46,
+    "Factor": 0.5767
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "20mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 3.06,
+    "Factor": 0.51
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "20mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 3.62,
+    "Factor": 0.6033
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "20mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 4.45,
+    "Factor": 0.7417
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "22mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 3.25,
+    "Factor": 0.5417
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "22mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 3.84,
+    "Factor": 0.64
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "22mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 4.73,
+    "Factor": 0.7883
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "22mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 6.31,
+    "Factor": 1.0517
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "25mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 3.72,
+    "Factor": 0.62
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "25mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 4.41,
+    "Factor": 0.735
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "25mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 5.44,
+    "Factor": 0.9067
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "25mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 7.16,
+    "Factor": 1.1933
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "32mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 4.8,
+    "Factor": 0.8
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "32mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 5.71,
+    "Factor": 0.9517
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "32mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 7.07,
+    "Factor": 1.1783
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "32mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 9.33,
+    "Factor": 1.555
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "38mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 5.7,
+    "Factor": 0.95
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "38mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 6.78,
+    "Factor": 1.13
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "38mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 8.41,
+    "Factor": 1.4017
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "38mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 11.12,
+    "Factor": 1.8533
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "42mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 6.26,
+    "Factor": 1.0433
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "42mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 7.46,
+    "Factor": 1.2433
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "42mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 9.33,
+    "Factor": 1.555
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "42mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 12.34,
+    "Factor": 2.0567
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "48mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 7.21,
+    "Factor": 1.2017
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "48mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 8.59,
+    "Factor": 1.4317
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "48mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 10.74,
+    "Factor": 1.79
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "48mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 14.22,
+    "Factor": 2.37
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "50mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 7.49,
+    "Factor": 1.2483
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "50mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 8.93,
+    "Factor": 1.4883
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "50mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 11.09,
+    "Factor": 1.8483
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "50mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 14.7,
+    "Factor": 2.45
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "60mm",
+    "Thickness (mm)": 1.0,
+    "Kgs/6mtr": 8.95,
+    "Factor": 1.4917
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "60mm",
+    "Thickness (mm)": 1.2,
+    "Kgs/6mtr": 10.68,
+    "Factor": 1.78
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "60mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 13.28,
+    "Factor": 2.2133
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "60mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 17.62,
+    "Factor": 2.9367
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "76mm",
+    "Thickness (mm)": 1.5,
+    "Kgs/6mtr": 16.96,
+    "Factor": 2.8267
+  },
+  {
+    "Section": "Circular Hollow Section(C.H.S)",
+    "Size": "76mm",
+    "Thickness (mm)": 2.0,
+    "Kgs/6mtr": 22.51,
+    "Factor": 3.7517
   }
 ]
