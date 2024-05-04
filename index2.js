@@ -2,6 +2,8 @@ var shs1 = 0.923;
 var selectedGauge;
 var selectedSection;
 var selectedMix;
+var selectedRebar;
+var rebarWeight;
 
 $(".tool1").click(function (event) {
   event.preventDefault();
@@ -14,6 +16,7 @@ $(".tool1").click(function (event) {
   $(".sizeSelect3").hide();
   $(".alert").hide();
   $(".assumptions").hide();
+  $(".rebarCalculator").hide();
 });
 
 $(".sectionSelect").change(function () {
@@ -68,8 +71,14 @@ $(".submit1").click(function (event) {
         console.log("Length is: " + length);
 
         var steelWeight = length * xFactor;
+        var piecesTon = (1000 * steelPieces).toFixed(3);
+        var steelPieces = length / 6;
         $(".display2").show();
-        $(".showSteelWeight").text(steelWeight);
+        $(".showSteelWeight").text(steelWeight.toFixed(3));
+        $(".showSteelPieces").text(steelPieces.toFixed(3));
+        $(".showSteelTon").text(
+          ((1000 * steelPieces) / steelWeight).toFixed(3)
+        );
         return false;
       }
     });
@@ -90,6 +99,8 @@ $(".tool2").click(function (event) {
   $(".concreteEstimator").show();
   $(".intro").hide();
   $(".steelEstimator").hide();
+  $(".rebarCalculator").hide();
+  $(".display2").hide();
 });
 
 $(".mixSelect").change(function () {
@@ -159,4 +170,33 @@ $(".submit2").click(function (event) {
     $(".showSand1").text(sand1);
     $(".showAggregate1").text(aggregate1);
   }
+});
+
+// Rebar Calculator
+$(".tool3").click(function (event) {
+  event.preventDefault();
+  $(".rebarCalculator").show();
+  $(".concreteEstimator").hide();
+  $(".intro").hide();
+  $(".steelEstimator").hide();
+  $(".display2").hide();
+});
+
+$(".rebarSelect").change(function () {
+  selectedRebar = $(this).find("option:selected").val();
+  console.log("Selected Rebar is: " + selectedRebar);
+});
+
+$(".submit3").click(function () {
+  console.log("Clicked!");
+  var rebarLength2 = $(".rebarLength").val();
+  console.log(rebarLength2);
+
+  rebarWeight = (selectedRebar ** 2 * rebarLength2) / 162;
+  var roundedRebarWeight = rebarWeight.toFixed(3);
+  var rebarPieces = (rebarLength2 / 6).toFixed(2);
+  console.log(rebarWeight);
+  $(".display3").show();
+  $(".showRebar").text(roundedRebarWeight);
+  $(".showRebarPieces").text(rebarPieces);
 });

@@ -1,5 +1,20 @@
+body {
+    height: 800px;
+  background-color: white; 
+  background-image: linear-gradient(to bottom right, #ffff, #32012F)
+}
+.fixed-top {
+font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
-
+.tool1, .tool2, .tool3, .tool4 {
+    font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
 .row {
     text-align: left;
     padding-top: 100px;
@@ -12,37 +27,44 @@
     margin-top: 15px;
 }
 
-.steelEstimator {
-    text-align: left;
-    color: brown;
+.steelEstimator{
+        color: black;
+    text-align: center;
     margin-bottom: 20px;
+    width: 100%;
+}
     
+.rebarCalculator {
+      text-align: center;
+    color: black;
+    margin-bottom: 20px;
 }
 
 .display1 {
-    color: brown;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;    text-align: center;
 }
 
 .concreteEstimator {
+        color: black;
+    text-align: center;
     margin-bottom: 20px;
-    width: 75%;
+    width: 100%;
 }
 
-.display2 {
-      color: brown;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
+.display2, .display3 {
+    text-align: center;
+      color: black;
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;  
 }
 
-.submit1 {
+.submit1, .submit2, .submit3 {
     margin-bottom: 10px;
 }
-
-.submit2{
-    margin-bottom: 20px;
-}
-
 .sourceData {
     text-decoration: none;
 }
@@ -51,9 +73,10 @@
     text-decoration: underline;
 }
 
-h6 {
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   
+h6, h3, span, select {
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;   
 }
 .assumptionsButton {
      text-decoration: none;
@@ -63,4 +86,14 @@ h6 {
 .assumptionsButton:hover {
         text-decoration: underline;
  
+}
+
+.welcome {position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+font-family: "Jersey 25 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px;
 }
