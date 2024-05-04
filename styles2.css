@@ -1,14 +1,14 @@
 body {
     height: 800px;
-  background-color: white; 
-  background-image: linear-gradient(to bottom right, #ffff, #32012F)
+  /* background-color: white; 
+  background-image: linear-gradient(to bottom right, #ffff, #32012F) */
 }
-.fixed-top {
+/* .fixed-top {
 font-family: "Caveat", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 .tool1, .tool2, .tool3, .tool4 {
     font-family: "Space Mono", monospace;
@@ -95,5 +95,5 @@ font-family: "Space Mono", monospace;
 font-family: "Jersey 25 Charted", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 100px;
+  font-size: 300%;
 }

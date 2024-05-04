@@ -187,7 +187,8 @@ $(".rebarSelect").change(function () {
   console.log("Selected Rebar is: " + selectedRebar);
 });
 
-$(".submit3").click(function () {
+$(".submit3").click(function (event) {
+  event.preventDefault();
   console.log("Clicked!");
   var rebarLength2 = $(".rebarLength").val();
   console.log(rebarLength2);
