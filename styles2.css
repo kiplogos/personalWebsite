@@ -15,7 +15,7 @@ font-family: "Caveat", cursive;
   font-weight: 400;
   font-style: normal;
 }
-.row {
+.row1 {
     text-align: left;
     padding-top: 100px;
 }
@@ -52,6 +52,13 @@ font-family: "Space Mono", monospace;
     text-align: center;
     margin-bottom: 20px;
     width: 100%;
+}
+
+.usefulContacts {
+          color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 75%;
 }
 
 .display2, .display3 {
@@ -97,3 +104,44 @@ font-family: "Jersey 25 Charted", sans-serif;
   font-style: normal;
   font-size: 300%;
 }
+
+
+.labourButton {
+  font-weight: bold;
+  width: 100%;
+  color: white;
+}
+.materialSupplierButton {
+  font-weight: bold;
+  width: 100%;
+  color: white;
+}
+
+.unsplash {
+  padding-top: 16px;
+  width: 100%;
+}
+
+.tableRow{
+  padding-top: 30px;
+}
+
+.labourSelect{
+  margin-top: 30px;
+}
+
+.hiddenDiv {
+  margin-top: 16px;
+}
+.pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+ .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+ 
