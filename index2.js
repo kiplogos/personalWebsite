@@ -162,7 +162,9 @@ $(".submit3").click(function (event) {
 $(".tool4").click(function (event) {
   event.preventDefault();
   $(".usefulContacts").show();
-  $(".intro, .steelEstimator, .rebarCalculator, .display2").hide();
+  $(
+    ".intro, .steelEstimator, .rebarCalculator, .display2, .concreteEstimator"
+  ).hide();
 });
 
 var selectedLabour;
@@ -170,7 +172,7 @@ var selectedLabour;
 // Handle the display of the table and selection elements
 $(".labourButton").click(function (event) {
   event.preventDefault();
-  $(".unsplash").hide();
+  $(".unsplash").fadeOut(1000);
   $("table").show();
   $(".labourSelect").show();
   $(".data1, .data2, .data3, .data4, .data5").empty().parent().show();
