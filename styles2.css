@@ -15,6 +15,7 @@ font-family: "Caveat", cursive;
   font-weight: 400;
   font-style: normal;
 }
+
 .row1 {
     text-align: left;
     padding-top: 100px;
@@ -110,6 +111,11 @@ font-family: "Jersey 25 Charted", sans-serif;
   font-weight: bold;
   width: 100%;
   color: white;
+  margin-bottom: 15px;
+}
+
+.labourButton:hover{
+  color: black;
 }
 .materialSupplierButton {
   font-weight: bold;
@@ -134,14 +140,14 @@ font-family: "Jersey 25 Charted", sans-serif;
   margin-top: 16px;
 }
 .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+ display: flex;
+ justify-content: center;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
  .pagination button {
-            margin: 0 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
- 
+margin: 0 5px;
+ padding: 5px 10px;
+cursor: pointer;
+}
+.

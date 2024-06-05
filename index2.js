@@ -7,6 +7,8 @@ var selectedRebar;
 var rebarWeight;
 var selectedLabour;
 
+
+
 // Tool 1: Steel Estimator
 $(".tool1").click(function (event) {
   event.preventDefault();
@@ -282,7 +284,7 @@ function populateTable(selectedLabour) {
       var prevButton = $("<button>")
         .text("Previous")
         .prop("disabled", currentPage === 1)
-        .addClass("btn btn-outline-primary")
+        .addClass("btn btn-outline-primary previousButton")
         .click(function () {
           if (currentPage > 1) {
             currentPage--;
@@ -297,6 +299,7 @@ function populateTable(selectedLabour) {
         var pageButton = $("<button>")
           .text(i)
           .addClass(currentPage === i ? "active" : "")
+          .addClass("activeButton btn btn-outline-primary")
           .click(function () {
             currentPage = parseInt($(this).text());
             renderPage(currentPage);
