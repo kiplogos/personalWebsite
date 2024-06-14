@@ -32,7 +32,7 @@
             <a class="nav-link active tool1" aria-current="page" href="#">Convert Hollow Steel Length to kgs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active tool4" aria-current="page" href="#">Bar Bending Schedule (BBS)</a>
+            <a class="nav-link active tool5" aria-current="page" href="#">Bar Bending Schedule (BBS)</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link active tool2" aria-current="page" href="#">Concrete Materials Estimator</a>
@@ -441,6 +441,125 @@
   
   </div>
 </div>
+
+<!-- Bar Bending Schedule -->
+
+<div class="barBendingSchedule container " style="display: none;">
+  <form>
+  <div class="row">
+    <div class="col col-sm">
+      <h4>Beam Info:</h4>
+      <select class="form-select form-select-sm mb-3 selectedBeam" aria-label="Large select example">
+        <option selected>Select Type of Beam</option>
+        <option value="1">Simple Beam</option>
+        <option value="2">Detailed Beam</option>
+        <option value="3">Continous Beam</option>
+      </select>
+      <span>Name of Beam:</span>
+      <input type="text" class="form-control" placeholder="Name of Beam">
+      <span>Clear Span:</span>
+      <input type="number" class="form-control clearSpan" placeholder="Clear Span in mm">
+      <span>Beam Depth:</span>
+      <input type="number" class="form-control beamDepth" placeholder="Beam Depth in mm">
+      <span>Beam Width:</span>
+      <input type="number" class="form-control beamWidth" placeholder="Beam Width in mm">
+      <span>Development Length:</span>
+      <input type="number" class="form-control developmentLength" placeholder="Development Length eg: 50d">
+      <span>Clear Cover:</span>
+      <input type="number" class="form-control clearCover" placeholder="Clear Cover eg: 25mm">
+
+      <!-- Stirrups -->
+      <img class="stirrupImage" src="https://blogmedia.testbook.com/blog/wp-content/uploads/2023/02/simple-stirrup-db3b1a6e.png" alt="stirrupImage">
+      <h4>Stirrups:</h4>
+      <span>Diameter of stirrup bars:</span>
+      <input type="number" class="form-control stirrupDiameter" placeholder="Bar Diameter">
+      <span>Number of hooks:</span>
+      <input type="number" class="form-control stirrupHooks" placeholder="Length of one hook = 9d">
+      <span>Number of Bends:</span>
+      <input type="number" class="form-control stirrupBends" placeholder="Number of bends">
+      <span>Spacing between stirrups:</span>
+      <input type="number" class="form-control stirrupSpacing" placeholder="Stirrup spacing">
+      <span>Bend Angle:</span>
+      <select class="form-select form-select-sm mb-3 selectedStirrupAngle" aria-label="Large select example">
+        <option selected>Bend Angle: </option>
+        <option value="45">45°</option>
+        <option value="90">90°</option>
+        <option value="135">135°</option>
+      </select>
+
+
+
+      
+
+    </div>
+    <div class="col col-sm">
+      <h4>Top Bar:</h4>
+      <span>Number of Bars:</span>
+      <input type="number" class="form-control topBars" placeholder="Number of Bars">
+      <span>Diameter:</span>
+      <input type="number" class="form-control topDiameter" placeholder="Diameter of Bars">
+      
+      <h4>Bottom Bar:</h4>
+      <span>Number of Bars:</span>
+      <input type="number" class="form-control bottomBars" placeholder="Number of Bars">
+      <span>Diameter:</span>
+      <input type="number" class="form-control bottomDiameter" placeholder="Diameter of Bars">
+
+      <div class="bbsDiv table-responsive" style="display: none;">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Bar Type</th>
+              <th scope="col">Diameter (mm)</th>
+              <th scope="col">Numbers</th>
+              <th scope="col">Cutting Length (mm)</th>
+              <th scope="col">Total Length (mm)</th>
+              <th scope="col">Total Weight (KG)</th>
+            </tr>
+          </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Top Bars</td>
+      <td class="topBarCell1"></td>
+      <td  class="topBarCell2" ></td>
+      <td  class="topBarCell3" ></td>
+      <td  class="topBarCell4" ></td>
+      <td  class="topBarCell5" ></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Bottom Bars</td>
+      <td class="bottomBarCell1"></td>
+      <td  class="bottomBarCell2" ></td>
+      <td  class="bottomBarCell3" ></td>
+      <td  class="bottomBarCell4" ></td>
+      <td  class="bottomBarCell5" ></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Stirrups</td>
+      <td class="stirrupsCell1"></td>
+      <td  class="stirrupsBarCell2" ></td>
+      <td  class="stirrupsBarCell3" ></td>
+      <td  class="stirrupsBarCell4" ></td>
+      <td  class="stirrupsBarCell5" ></td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+
+
+      
+    </div>
+          <button type="button" class="btn btn-primary bbsSubmit" >Submit</button>
+
+  </div>
+</form>
+</div>
+
+
 
 
 

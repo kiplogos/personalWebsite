@@ -88,7 +88,7 @@ $(".tool2").click(function (event) {
   event.preventDefault();
   $(".concreteEstimator").show();
   $(
-    ".intro, .steelEstimator, .rebarCalculator, .display2, .usefulContacts"
+    ".intro, .steelEstimator, .rebarCalculator, .display2, .usefulContacts,.barBendingSchedule"
   ).hide();
 });
 
@@ -139,7 +139,7 @@ $(".tool3").click(function (event) {
   event.preventDefault();
   $(".rebarCalculator").show();
   $(
-    ".concreteEstimator, .intro, .steelEstimator, .display2, .usefulContacts"
+    ".concreteEstimator, .intro, .steelEstimator, .display2, .usefulContacts,.barBendingSchedule"
   ).hide();
 });
 
@@ -165,7 +165,7 @@ $(".tool4").click(function (event) {
   event.preventDefault();
   $(".usefulContacts").show();
   $(
-    ".intro, .steelEstimator, .rebarCalculator, .display2, .concreteEstimator"
+    ".intro, .steelEstimator, .rebarCalculator, .display2, .concreteEstimator, .barBendingSchedule"
   ).hide();
 });
 
@@ -333,3 +333,110 @@ function populateTable(selectedLabour) {
     console.log("Error fetching JSON data: " + err);
   });
 }
+
+// Tool 5: Bar Bending Schedule
+
+$(".tool5").click(function (event) {
+  event.preventDefault();
+  $(
+    ".concreteEstimator, .display1, .intro, .sizeSelect, .sizeSelect2, .sizeSelect3, .alert, .assumptions, .rebarCalculator, .usefulContacts"
+  ).hide();
+  $(".barBendingSchedule").show();
+});
+
+var selectedBeam;
+var selectedStirrupAngle;
+
+$(".selectedBeam").change(function () {
+  selectedBeam = parseFloat($(this).find("option:selected").text());
+  console.log("Selected Beam is: " + selectedBeam);
+});
+
+$(".selectedStirrupAngle").change(function () {
+  selectedStirrupAngle = parseFloat($(this).find("option:selected").val());
+  console.log("Selected Stirrup Angle is: " + selectedStirrupAngle);
+  console.log(typeof selectedStirrupAngle);
+});
+
+$(".bbsSubmit").click(function (event) {
+  event.preventDefault();
+  $(".bbsDiv").show();
+
+  var clearSpan = parseFloat($(".clearSpan").val()),
+    beamWidth = parseFloat($(".beamWidth").val()),
+    beamDepth = parseFloat($(".beamDepth").val()),
+    developmentLength = parseFloat($(".developmentLength").val()),
+    topDiameter = parseFloat($(".topDiameter").val()),
+    topBars = parseFloat($(".topBars").val()),
+    clearCover = parseFloat($(".clearCover").val()),
+    bottomDiameter = parseFloat($(".bottomDiameter").val()),
+    bottomBars = parseFloat($(".bottomBars").val()),
+    stirrupSpacing = parseFloat($(".stirrupSpacing").val()),
+    stirrupBends = parseFloat($(".stirrupBends").val()),
+    stirrupDiameter = parseFloat($(".stirrupDiameter").val()),
+    stirrupHooks = parseFloat($(".stirrupHooks").val());
+
+  // Top Bar
+  var topBarCuttingLength =
+    clearSpan + 2 * developmentLength * topDiameter - 2 * clearCover;
+  console.log("Top Bar cutting length is " + topBarCuttingLength);
+
+  // Bottom Bar
+  var bottomBarCuttingLength =
+    clearSpan + 2 * developmentLength * bottomDiameter - 2 * clearCover;
+  console.log("Bottom Bar cutting length is " + bottomBarCuttingLength);
+
+  // Stirrups
+  if (selectedStirrupAngle === 45) {
+    selectedStirrupAngle = 1 * stirrupDiameter;
+    console.log(selectedStirrupAngle);
+    console.log(typeof selectedStirrupAngle);
+  } else if (selectedStirrupAngle === 90) {
+    selectedStirrupAngle = 2 * stirrupDiameter;
+    console.log(selectedStirrupAngle);
+  } else {
+    selectedStirrupAngle = 3 * stirrupDiameter;
+    console.log(selectedStirrupAngle);
+  }
+
+  var stirrupNumber = Math.ceil(clearSpan / stirrupSpacing + 1);
+  //prettier-ignore
+  var stirrupCuttingLength =
+    2 * (beamDepth +
+    beamWidth) +
+    (stirrupBends * selectedStirrupAngle) +
+    (stirrupHooks * 9*stirrupDiameter);
+  console.log("Stirrup Number is: " + stirrupNumber);
+  console.log("Stirrup Cutting Length is: " + stirrupCuttingLength);
+
+  topBarWeight = (
+    ((topBarCuttingLength * 2 * topDiameter ** 2) / 162) *
+    0.001
+  ).toFixed(2);
+  bottomBarWeight = (
+    ((bottomBarCuttingLength * 2 * bottomDiameter ** 2) / 162) *
+    0.001
+  ).toFixed(2);
+  stirrupsWeight = (
+    ((stirrupNumber * stirrupCuttingLength * 2 * stirrupDiameter ** 2) / 162) *
+    0.001
+  ).toFixed(2);
+
+  $(".topBarCell1").text(topDiameter);
+  $(".topBarCell2").text(topBars);
+  $(".topBarCell3").text(topBarCuttingLength * 0.001);
+  $(".topBarCell4").text(topBarCuttingLength * 0.001 * topBars);
+  $(".topBarCell5").text(topBarWeight);
+
+  $(".bottomBarCell1").text(bottomDiameter);
+  $(".bottomBarCell2").text(bottomBars);
+  $(".bottomBarCell3").text(bottomBarCuttingLength * 0.001);
+  $(".bottomBarCell4").text(bottomBarCuttingLength * 0.001 * bottomBars);
+  $(".bottomBarCell5").text(bottomBarWeight);
+
+  $(".stirrupsCell1").text(stirrupDiameter);
+  $(".stirrupsBarCell2").text(stirrupNumber);
+  $(".stirrupsBarCell3").text(stirrupCuttingLength * 0.001);
+  $(".stirrupsBarCell4").text(stirrupNumber * stirrupCuttingLength * 0.001);
+  $(".stirrupsBarCell5").text(stirrupsWeight);
+});
