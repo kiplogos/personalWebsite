@@ -1,0 +1,296 @@
+body {
+    height: 800px;
+  /* background-color: white; 
+  background-image: linear-gradient(to bottom right, #ffff, #32012F) */
+}
+/* .fixed-top {
+font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+.tool1, .tool2, .tool3, .tool4 {
+    font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.row1 {
+    text-align: left;
+    padding-top: 100px;
+}
+.intro {
+    text-align: center;
+}
+
+.mb-3 {
+    margin-top: 15px;
+}
+
+.steelEstimator{
+        color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+    
+.rebarCalculator {
+      text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.display1 {
+    color: black;
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;    text-align: center;
+}
+
+.concreteEstimator {
+        color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.usefulContacts {
+          color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.display2, .display3 {
+    text-align: center;
+      color: black;
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;  
+}
+
+.submit1, .submit2, .submit3 {
+    margin-bottom: 10px;
+}
+.sourceData {
+    text-decoration: none;
+}
+
+.sourceData:hover {
+    text-decoration: underline;
+}
+
+h6, h3, span, select {
+font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;   
+}
+.assumptionsButton {
+     text-decoration: none;
+     text-align: left;
+}
+
+.assumptionsButton:hover {
+        text-decoration: underline;
+ 
+}
+
+.welcome {position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+font-family: "Jersey 25 Charted", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 300%;
+}
+
+
+.labourButton {
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.labourButton:hover{
+  color: black;
+}
+.materialSupplierButton {
+  font-weight: bold;
+  width: 100%;
+  color: white;
+}
+
+.unsplash {
+  padding-top: 16px;
+  width: 100%;
+}
+
+.tableRow{
+  padding-top: 30px;
+}
+
+.labourSelect{
+  margin-top: 30px;
+}
+
+.hiddenDiv {
+  margin-top: 16px;
+}
+.pagination {
+ display: flex;
+ justify-content: center;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+ .pagination button {
+margin: 0 5px;
+ padding: 5px 10px;
+cursor: pointer;
+}
+
+h4 {
+  color: brown;
+  margin-top: 20px;
+}
+
+.stirrupImage {
+  padding-top: 30px;
+}
+
+.bbsDiv {
+  
+}
+
+.bbsSubmit {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+}
+
+
+/* Sign Up Div */
+
+
+.signUpDiv body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.signUpDiv .container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.signUpDiv h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signUpDiv label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signUpDiv input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signUpDiv button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signUpDiv button:hover {
+  background-color: #218838;
+}
+
+
+.signUpDiv body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.signUpDiv .container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.signUpDiv h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.signUpDiv h2:hover {
+  background-color: yellow;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signUpDiv label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.signUpDiv input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signUpDiv button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signUpDiv button:hover {
+  background-color: #218838;
+}
+
+label {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
