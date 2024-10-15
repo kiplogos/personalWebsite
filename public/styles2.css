@@ -1,14 +1,7 @@
 body {
     height: 800px;
-  /* background-color: white; 
-  background-image: linear-gradient(to bottom right, #ffff, #32012F) */
 }
-/* .fixed-top {
-font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-} */
+
 
 .tool1, .tool2, .tool3, .tool4 {
     font-family: "Space Mono", monospace;
@@ -109,9 +102,19 @@ font-family: "Jersey 25 Charted", sans-serif;
 
 .labourButton {
   font-weight: bold;
-  width: 100%;
+  width: 50%;
   color: white;
   margin-bottom: 15px;
+}
+.suppliersButton{
+    font-weight: bold;
+  width: 50%;
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.loremFlickr {
+  width: 75%;
 }
 
 .labourButton:hover{
@@ -201,6 +204,9 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
 }
+.h25 {
+  margin-top: 20px;
+}
 
 .signUpDiv label {
   display: block;
@@ -288,9 +294,94 @@ h2 {
   background-color: #218838;
 }
 
+hr {
+  margin-top: 60px;
+}
+.suppliersDiv {
+  margin-top: 50px;
+}
+
 label {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
 }
+
+.phoneNumberError {
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+}
+.phoneNumberError2{
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+}
+
+.hideForm {
+  padding: 20px;
+}
+
+.switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .slider:after {
+      content: 'Client';
+      color: white;
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 70%;
+      font-size: 10px;
+    }
+
+    input:checked + .slider:after {
+      content: 'Fundi';
+      left: 30%;
+    }
