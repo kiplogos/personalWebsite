@@ -1,235 +1,181 @@
-var selectedSupplier;
-
-// Handle the display of the table and selection elements
-$(".supplierButton").click(function (event) {
-  event.preventDefault();
-  $(".loremFlickr").fadeOut(1000);
-  $("table").show();
-  $(".supplierSelect").show();
-  $(".data1, .data2, .data3, .data4, .data5").empty().parent().show();
+$(".supplierSelect").change(function () {
+  selectedSupplier = $(this).find("option:selected").text();
+  console.log("Selected Supplier: " + selectedSupplier);
+  populateTable2(selectedSupplier);
 });
 
-// Update selectedLabour when a selection is made
-
-$(".labourSelect").change(function () {
-  selectedLabour = $(this).find("option:selected").text();
-  console.log("Selected Labour: " + selectedLabour);
-  populateTable(selectedLabour);
+var secondRegionSelect2;
+$(".regionSelect2").change(function () {
+  secondRegionSelect2 = $(this).find("option:selected").text();
+  console.log("Selected Region2: " + secondRegionSelect2);
+  filterAndFetchUsers2();
 });
 
-// Handle POST requests to /signup
-app.post("/signup-suppliers", async (req, res) => {
-  const { Name, Field, Location, Contact } = req.body;
-
-  // Create a new user instance
-  const supplier = new User({ Name, Field, Location, Contact });
-
-  try {
-    // Save the user to the database
-    await supplier.save();
-    console.log("Supplier saved:", { Name, Field, Location, Contact });
-    res.json({ message: "Supplier sign up successful!" });
-  } catch (err) {
-    console.error("Failed to save user", err);
-    res.status(500).json({ message: "Sign up failed" });
+function filterAndFetchUsers2() {
+  console.log("Fetching suppliers for location: " + firstRegionSelect1); // Log the selected region
+  if (!secondRegionSelect2) {
+    console.error(
+      "Second region select is empty. Ensure a region is selected."
+    );
+    return; // Prevent fetch if no region is selected
   }
-});
+  fetch(`/suppliers?location=${encodeURIComponent(secondRegionSelect2)}`) // Ensure the location is encoded
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok: " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Users retrieved:", data); // Log the users retrieved
+      if (data.length > 0) {
+        const filteredData = data.filter(
+          (user) => user.Field === selectedSupplier
+        );
+        if (filteredData.length > 0) {
+          populateTable(filteredData);
+          $(".no-users-message").hide();
+        } else {
+          console.log("No suppliers found for the selected labour and region.");
+          $(".no-users-message").show();
+          populateTable([]); // Clear the table if no data matches the criteria
+        }
+      } else {
+        console.log("No suppliers found for the selected region.");
+        $(".no-users-message").show();
+        populateTable([]); // Clear the table if no data matches the region
+      }
+    })
+    .catch((error) => console.error("Error fetching users:", error));
+}
 
-let product = "";
-let countySelect2 = "";
-$(".labourSelect2").change(function () {
-  product = $(this).find("option:selected").text();
-  console.log("Selected Product: " + product);
-});
-$(".countySelect2").change(function () {
-  countySelect2 = $(this).find("option:selected").text();
-  console.log("Selected County: " + countySelect2);
-});
+// Pagination settings
+var currentPage = 1;
+var rowsPerPage = 10;
 
-$("#signup-form2").on("submit", function (event) {
-  event.preventDefault();
+// Function to populate the table
+function populateTable(data) {
+  // Clear previous table data
+  $(".hiddenDiv").empty();
 
-  var phoneNumberSuppliers = $("#phoneNumber").val();
-  var phoneNumberPatternSuppliers = /^07\d{8}$/;
-  var isValid = phoneNumberPatternSuppliers.test(phoneNumberSuppliers);
+  // Create a new table element
+  var table = $("<table>").addClass(
+    "table table-striped table-bordered table-hover styled-table"
+  );
 
-  if (!isValid) {
-    $("#phoneNumberError").show();
-  } else {
-    $("#phoneNumberError").hide();
+  // Check if there is any data to display
+  if (data.length > 0) {
+    // Create table header row
+    var thead = $("<thead>");
+    var headerRow = $("<tr>");
 
-    const supplierName = $("#supplierName").val();
-    const supplierContact = $("#phoneNumberSuppliers").val();
+    // Add a header for the row numbers
+    headerRow.append($("<th>").text("Index"));
 
-    const data2 = {
-      Name: supplierName,
-      Field: product,
-      Location: countySelect2,
-      Contact: supplierContact,
-    };
-    console.log("Data to be sent:", data2);
-
-    $.ajax({
-      url: "http://localhost:3000/signup-suppliers",
-      type: "POST",
-      contentType: "application/json",
-      data: JSON.stringify(data2),
-      success: function (response) {
-        console.log("Success:", response);
-        alert("Supplier Sign up successful");
-      },
-      error: function (error) {
-        console.error("Error:", error);
-        alert("Supplier Sign up failed");
-      },
+    // Create header cells based on the keys of the first item, excluding "Index"
+    $.each(data[0], function (key) {
+      if (key !== "Index") {
+        var th = $("<th>").text(key);
+        headerRow.append(th);
+      }
     });
+
+    thead.append(headerRow);
+    table.append(thead);
   }
-});
 
-// Function to populate the table based on the selected labour field
-var currentPage = 1;
-var rowsPerPage = 10;
+  // Create table body
+  var tbody = $("<tbody>");
 
-var currentPage = 1;
-var rowsPerPage = 10;
+  // Function to render a specific page
+  function renderPage(page) {
+    tbody.empty(); // Clear the table body
 
-function populateTable(selectedSupplier) {
-  $.getJSON("/suppliers", function (data) {
-    // Clear previous table data
-    $(".hiddenDiv").empty();
+    // Calculate the start and end indices for the current page
+    var start = (page - 1) * rowsPerPage;
+    var end = Math.min(start + rowsPerPage, data.length);
 
-    // Filter data based on selected labour field
-    var filteredData = data.filter(
-      (item) => item["Field"] === selectedSupplier
-    );
+    // Iterate over the data for the current page
+    for (var i = start; i < end; i++) {
+      var item = data[i];
+      var row = $("<tr>");
 
-    // Create a new table element
-    var table = $("<table>").addClass(
-      "table table-striped table-bordered table-hover styled-table"
-    );
+      // Add a cell for the row number
+      row.append($("<td>").text(i + 1));
 
-    // Check if there is any data to display
-    if (filteredData.length > 0) {
-      // Create table header row
-      var thead = $("<thead>");
-      var headerRow = $("<tr>");
-
-      // Add a header for the row numbers
-      headerRow.append($("<th>").text("Index"));
-
-      // Create header cells based on the keys of the first item, excluding "Index"
-      $.each(filteredData[0], function (key, value) {
+      // Iterate over the keys, excluding "Index"
+      $.each(item, function (key, value) {
         if (key !== "Index") {
-          var th = $("<th>").text(key);
-          headerRow.append(th);
+          // Create a new cell for each key
+          var cell = $("<td>").text(value);
+          row.append(cell);
         }
       });
 
-      thead.append(headerRow);
-      table.append(thead);
+      tbody.append(row);
     }
 
-    // Create table body
-    var tbody = $("<tbody>");
+    table.append(tbody);
+    $(".hiddenDiv").append(table);
 
-    // Function to render a specific page
-    function renderPage(page) {
-      tbody.empty(); // Clear the table body
+    // Update the pagination controls
+    updatePaginationControls(data.length, page);
+  }
 
-      // Calculate the start and end indices for the current page
-      var start = (page - 1) * rowsPerPage;
-      var end = Math.min(start + rowsPerPage, filteredData.length);
+  // Function to update the pagination controls
+  function updatePaginationControls(totalRows, currentPage) {
+    var totalPages = Math.ceil(totalRows / rowsPerPage);
 
-      // Iterate over the data for the current page
-      for (var i = start; i < end; i++) {
-        var item = filteredData[i];
-        var row = $("<tr>");
+    // Clear existing pagination controls
+    $(".pagination").remove();
 
-        // Add a cell for the row number
-        row.append($("<td>").text(i + 1));
+    var pagination = $("<div>").addClass("pagination");
 
-        // Iterate over the keys, excluding "Index"
-        $.each(item, function (key, value) {
-          if (key !== "Index") {
-            // Create a new cell for each key
-            var cell = $("<td>").text(value);
-            // Append the cell to the row
-            row.append(cell);
-          }
-        });
+    // Create Previous button
+    var prevButton = $("<button>")
+      .text("Previous")
+      .prop("disabled", currentPage === 1)
+      .addClass("btn btn-outline-primary previousButton")
+      .click(function () {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPage(currentPage);
+        }
+      });
 
-        // Append the row to the table body
-        tbody.append(row);
-      }
+    pagination.append(prevButton);
 
-      table.append(tbody);
-
-      // Append the table to the div with class "hiddenDiv"
-      $(".hiddenDiv").append(table);
-
-      // Update the pagination controls
-      updatePaginationControls(filteredData.length, page);
-    }
-
-    // Function to update the pagination controls
-    function updatePaginationControls(totalRows, currentPage) {
-      var totalPages = Math.ceil(totalRows / rowsPerPage);
-
-      // Clear existing pagination controls
-      $(".pagination").remove();
-
-      var pagination = $("<div>").addClass("pagination");
-
-      // Create Previous button
-      var prevButton = $("<button>")
-        .text("Previous")
-        .prop("disabled", currentPage === 1)
-        .addClass("btn btn-outline-primary previousButton")
+    // Create page buttons
+    for (var i = 1; i <= totalPages; i++) {
+      var pageButton = $("<button>")
+        .text(i)
+        .addClass(currentPage === i ? "active" : "")
+        .addClass("activeButton btn btn-outline-primary")
         .click(function () {
-          if (currentPage > 1) {
-            currentPage--;
-            renderPage(currentPage);
-          }
+          currentPage = parseInt($(this).text());
+          renderPage(currentPage);
         });
 
-      pagination.append(prevButton);
-
-      // Create page buttons
-      for (var i = 1; i <= totalPages; i++) {
-        var pageButton = $("<button>")
-          .text(i)
-          .addClass(currentPage === i ? "active" : "")
-          .addClass("activeButton btn btn-outline-primary")
-          .click(function () {
-            currentPage = parseInt($(this).text());
-            renderPage(currentPage);
-          });
-
-        pagination.append(pageButton);
-      }
-
-      // Create Next button
-      var nextButton = $("<button>")
-        .text("Next")
-        .prop("disabled", currentPage === totalPages)
-        .addClass("btn btn-outline-primary")
-        .click(function () {
-          if (currentPage < totalPages) {
-            currentPage++;
-            renderPage(currentPage);
-          }
-        });
-
-      pagination.append(nextButton);
-
-      // Append the pagination controls to the div with class "hiddenDiv"
-      $(".hiddenDiv").append(pagination);
+      pagination.append(pageButton);
     }
 
-    // Render the first page
-    renderPage(currentPage);
-  }).fail(function (jqxhr, textStatus, error) {
-    var err = textStatus + ", " + error;
-    console.log("Error fetching JSON data: " + err);
-  });
+    // Create Next button
+    var nextButton = $("<button>")
+      .text("Next")
+      .prop("disabled", currentPage === totalPages)
+      .addClass("btn btn-outline-primary")
+      .click(function () {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPage(currentPage);
+        }
+      });
+
+    pagination.append(nextButton);
+
+    $(".hiddenDiv").append(pagination);
+  }
+
+  // Render the first page
+  renderPage(currentPage);
 }

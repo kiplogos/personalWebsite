@@ -135,9 +135,9 @@ font-family: "Jersey 25 Charted", sans-serif;
   padding-top: 30px;
 }
 
-.labourSelect{
+/* .labourSelect{
   margin-top: 30px;
-}
+} */
 
 .hiddenDiv {
   margin-top: 16px;
@@ -163,9 +163,8 @@ h4 {
   padding-top: 30px;
 }
 
-.bbsDiv {
-  
-}
+
+
 
 .bbsSubmit {
   margin-bottom: 30px;
@@ -252,17 +251,43 @@ h2 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 250px;
 }
 
-.signUpDiv h2 {
+.signUpDiv h3 {
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
   text-align: center;
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: rgb(228, 216, 228);
+}
+.joinUs {
+  text-align: center;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: yellow;
+  animation: joinUs 1.5s infinite ease-in-out
+}
+@keyframes joinUs {
+  0% {
+    transform: scale(1);  /* Initial size */
+    opacity: 1;           /* Full opacity */
+  }
+  50% {
+    transform: scale(1.1);  /* Grow by 20% */
+    opacity: 0.7;           /* Slightly transparent */
+  }
+  100% {
+    transform: scale(1);  /* Back to original size */
+    opacity: 1;           /* Full opacity */
+  }
 }
 
 .signUpDiv h2:hover {
-  background-color: yellow;
+  background-color: rgb(180, 173, 180);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -385,3 +410,66 @@ label {
       content: 'Fundi';
       left: 30%;
     }
+
+
+ .regionSelect1, .regionSelect2 {
+  width: 30%;
+  margin-top: 10px;
+ }   
+
+.no-users-message {
+  display: none; /* Hidden by default */
+  background: linear-gradient(135deg, #ffecb3, #ffe082); /* Soft yellow gradient */
+  color: #6d4c41; /* Dark brown text color */
+  border: 1px solid #ffb300; /* Golden border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the message */
+  margin: 20px 0; /* Margin above and below the message */
+  font-size: 18px; /* Increase font size */
+  text-align: center; /* Center the text */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+  position: relative; /* Position relative for the icon */
+  animation: fadeIn 0.5s ease-in; /* Fade-in animation */
+}
+
+.no-users-message:before {
+  content: "⚠️"; /* Warning icon */
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 24px; /* Larger icon size */
+  position: absolute; /* Positioning relative to the message box */
+  left: 15px; /* Distance from the left */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical centering */
+}
+
+.no-users-message h4 {
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Make the heading bold */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(-10px); /* Start slightly higher */
+  }
+  to {
+    opacity: 1; /* End fully visible */
+    transform: translateY(0); /* End in place */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; /* Start fully visible */
+    transform: translateY(0); /* Stay in place */
+  }
+  to {
+    opacity: 0; /* End fully transparent */
+    transform: translateY(10px); /* Move slightly down */
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards; /* Fade-out animation */
+  display: none; /* Hidden after fading out */
+}

@@ -56,6 +56,35 @@ const supplierSchema = new mongoose.Schema({
 // Create Supplier model
 const Supplier = mongoose.model("Supplier", supplierSchema);
 
+//Create Steel Data schema
+const steelDataSchema = new mongoose.Schema({
+  Section: String,
+  Size: String,
+  Thickness_mm: Number,
+  Kgs_per_6mtr: Number,
+  Factor: Number,
+});
+
+// Create SteelData model
+const Steel_data = mongoose.model("SteelData", steelDataSchema);
+
+
+// Get Steel Data
+app.get("/steel_datas", async (req, res) => {
+  try {
+    const steel_datas = await Steel_data.find({}).exec(); // Use .exec() to execute the query
+
+    res.json(steel_datas); // Send users as JSON response
+    console.log(steel_datas)
+  } catch (err) {
+    console.error("Error fetching steel data:", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -112,7 +141,10 @@ app.post("/signup-suppliers", async (req, res) => {
 //Get Suppliers
 app.get("/suppliers", async (req, res) => {
   try {
-    const suppliers = await Supplier.find({}).exec(); // Use .exec() to execute the query
+    const location = req.query.location;
+    console.log("Location received:", location);
+    const query = location ? { Location: location } : {};
+    const suppliers = await Supplier.find(query).exec();
 
     res.json(suppliers); // Send suppliers as JSON response
   } catch (err) {
@@ -121,10 +153,19 @@ app.get("/suppliers", async (req, res) => {
   }
 });
 
+
+
+
 //Get labourers
 app.get("/users", async (req, res) => {
   try {
-    const users = await User.find({}).exec(); // Use .exec() to execute the query
+    const location = req.query.location;
+    console.log("Location received:", location);
+    
+    const query = location ? { Location: location } : {};
+
+    const users = await User.find(query).exec(); // Use .exec() to execute the query
+    console.log("Users found:", users);
 
     res.json(users); // Send users as JSON response
   } catch (err) {
@@ -132,6 +173,23 @@ app.get("/users", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+// //Get labourers
+// app.get("/users", async (req, res) => {
+//   try {
+//     const location = req.query.location;
+    
+//     const query = location ? { Location: location } : {};
+//     const users = await User.find({query}).exec(); // Use .exec() to execute the query
+
+//     res.json(users); // Send users as JSON response
+//   } catch (err) {
+//     console.error("Error fetching users:", err);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// });
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
