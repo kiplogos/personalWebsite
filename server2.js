@@ -51,6 +51,11 @@ const supplierSchema = new mongoose.Schema({
   Field: String,
   Location: String,
   Contact: String,
+  Email: {
+    type: String,
+    required: true,
+    unique: true, // Ensure email uniqueness
+  },
 });
 
 // Create Supplier model
@@ -68,23 +73,18 @@ const steelDataSchema = new mongoose.Schema({
 // Create SteelData model
 const Steel_data = mongoose.model("SteelData", steelDataSchema);
 
-
 // Get Steel Data
 app.get("/steel_datas", async (req, res) => {
   try {
     const steel_datas = await Steel_data.find({}).exec(); // Use .exec() to execute the query
 
     res.json(steel_datas); // Send users as JSON response
-    console.log(steel_datas)
+    console.log(steel_datas);
   } catch (err) {
     console.error("Error fetching steel data:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
-
-
-
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -118,19 +118,18 @@ app.post("/signup-labour", async (req, res) => {
   }
 });
 
-
-
 // Handle POST requests to /signup-suppliers
 app.post("/signup-suppliers", async (req, res) => {
-  const { Name, Field, Location, Contact } = req.body;
+  const { Name, Field, Location, Contact, Email } = req.body;
 
-  // Create a new user instance
-  const supplier = new Supplier({ Name, Field, Location, Contact });
+  // Create a new supplier instance
+  const supplier = new Supplier({ Name, Field, Location, Contact, Email });
+  console.log(supplier);
 
   try {
     // Save the user to the database
     await supplier.save();
-    console.log("Supplier saved:", { Name, Field, Location, Contact });
+    console.log("Supplier saved:", { Name, Field, Location, Contact, Email });
     res.json({ message: "Supplier sign up successful!" });
   } catch (err) {
     console.error("Failed to save supplier", err);
@@ -144,7 +143,7 @@ app.get("/suppliers", async (req, res) => {
     const location = req.query.location;
     console.log("Location received:", location);
     const query = location ? { Location: location } : {};
-    const suppliers = await Supplier.find(query).exec();
+    const suppliers = await Supplier.find(query).select("-_id -__v").exec();
 
     res.json(suppliers); // Send suppliers as JSON response
   } catch (err) {
@@ -153,18 +152,15 @@ app.get("/suppliers", async (req, res) => {
   }
 });
 
-
-
-
 //Get labourers
 app.get("/users", async (req, res) => {
   try {
     const location = req.query.location;
     console.log("Location received:", location);
-    
+
     const query = location ? { Location: location } : {};
 
-    const users = await User.find(query).exec(); // Use .exec() to execute the query
+    const users = await User.find(query).select("-_id -__v").exec();
     console.log("Users found:", users);
 
     res.json(users); // Send users as JSON response
@@ -174,20 +170,6 @@ app.get("/users", async (req, res) => {
   }
 });
 
-// //Get labourers
-// app.get("/users", async (req, res) => {
-//   try {
-//     const location = req.query.location;
-    
-//     const query = location ? { Location: location } : {};
-//     const users = await User.find({query}).exec(); // Use .exec() to execute the query
-
-//     res.json(users); // Send users as JSON response
-//   } catch (err) {
-//     console.error("Error fetching users:", err);
-//     res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
 
 
 

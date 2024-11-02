@@ -1,12 +1,25 @@
-body {
+/* body {
     height: 800px;
+} */
+
+html {
+  height: 100%;
+  overflow: auto;
 }
 
 
-.tool1, .tool2, .tool3, .tool4 {
-    font-family: "Space Mono", monospace;
+.tool1, .tool2, .tool3, .tool4, .tool5 {
+font-family: "Titillium Web", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-size: medium;
+  margin-left: 15px;
+}
+
+.tool1:hover, .tool2:hover, .tool3:hover, .tool4:hover, .tool5:hover {
+    transform: scale(1.1); 
+  transition: transform 0.3s ease; 
+  color: #ffe082 !important;
+  
 }
 
 .row1 {
@@ -16,6 +29,11 @@ body {
 .intro {
     text-align: center;
 }
+.intro2 {
+    text-align: center;
+    margin-top: 120px;
+}
+
 
 .mb-3 {
     margin-top: 15px;
@@ -75,9 +93,9 @@ font-family: "Space Mono", monospace;
 }
 
 h6, h3, span, select {
-font-family: "Space Mono", monospace;
+font-family: "Titillium Web", sans-serif;
   font-weight: 400;
-  font-style: normal;   
+  font-size: small; 
 }
 .assumptionsButton {
      text-decoration: none;
@@ -157,7 +175,11 @@ cursor: pointer;
 h4 {
   color: brown;
   margin-top: 20px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+ 
 }
+
 
 .stirrupImage {
   padding-top: 30px;
@@ -473,3 +495,61 @@ label {
   animation: fadeOut 0.5s ease-out forwards; /* Fade-out animation */
   display: none; /* Hidden after fading out */
 }
+
+.welcomeButton {
+   margin-top: 100px;
+   margin-bottom: 50px;
+    background-color: #5c9ae6; /* Primary blue color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Spacing around text */
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Rounded corners */
+font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.welcomeButton:hover {
+  background-color: #ae7fbd; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Active effect */
+.welcomeButton:active {
+  background-color: #004080; /* Even darker blue on click */
+  transform: scale(0.95); /* Slightly shrinks when clicked */
+}
+
+/* Focus effect (for keyboard accessibility) */
+.welcomeButton:focus {
+  outline: 3px solid #80bfff; /* Light blue outline on focus */
+}
+
+
+.modal-content {
+    height: 1000px;
+
+}
+
+.form-label {
+  margin-top: 5px;
+}
+
+footer {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: small;
+}
+
+.navbar-brand{
+margin-left: 5px;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1); /* Slightly enlarges the element */
+  transition: transform 0.3s ease; /* Smooth transition */
+  color: #ffe082;
+}
+

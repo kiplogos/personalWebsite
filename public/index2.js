@@ -8,12 +8,17 @@ var rebarWeight;
 var selectedLabour;
 
 
+$(".welcomeButton").click(function (event) {
+  event.preventDefault();
+  // $(".user-signup-form").show();
+});
+
 // Tool 1: Steel Estimator
 $(".tool1").click(function (event) {
   event.preventDefault();
   $(".steelEstimator").show();
   $(
-    ".concreteEstimator, .display1, .intro, .sizeSelect, .sizeSelect2, .sizeSelect3, .alert, .assumptions, .rebarCalculator, .usefulContacts"
+    ".barBendingSchedule, .concreteEstimator, .display1, .intro, .sizeSelect, .sizeSelect2, .sizeSelect3, .alert, .assumptions, .rebarCalculator, .usefulContacts"
   ).hide();
 });
 
@@ -180,12 +185,6 @@ $(".suppliersButton").click(function (event) {
   $(".regionSelect2").show();
   $(".regionSelect1").hide();
 });
-
-// $(".supplierSelect").change(function () {
-//   selectedSupplier = $(this).find("option:selected").text();
-//   console.log("Selected Supplier: " + selectedSupplier);
-//   populateTable2(selectedSupplier);
-// });
 
 var selectedLabour;
 
@@ -415,7 +414,7 @@ function filterAndFetchUsers2() {
       return response.json();
     })
     .then((data) => {
-      console.log("Users retrieved:", data); // Log the users retrieved
+      console.log("Suppliers retrieved:", data); // Log the users retrieved
       if (data.length > 0) {
         const filteredData = data.filter(
           (user) => user.Field === selectedSupplier
@@ -568,13 +567,12 @@ function populateTable(data) {
   renderPage(currentPage);
 }
 
-
 // Tool 5: Bar Bending Schedule
 
 $(".tool5").click(function (event) {
   event.preventDefault();
   $(
-    ".concreteEstimator, .display1, .intro, .sizeSelect, .sizeSelect2, .sizeSelect3, .alert, .assumptions, .rebarCalculator, .usefulContacts"
+    ".steelEstimator, .concreteEstimator, .display1, .intro, .sizeSelect, .sizeSelect2, .sizeSelect3, .alert, .assumptions, .rebarCalculator, .usefulContacts"
   ).hide();
   $(".barBendingSchedule").show();
 });
@@ -744,24 +742,7 @@ $("#signup-form").on("submit", function (event) {
   }
 });
 
-// $("#phoneNumberSupplier").on("input", function () {
-//   var phoneNumber2 = $(this).val();
-//   var phoneNumberPattern2 = /^07\d{8}$/;
-//   var isValid = phoneNumberPattern2.test(phoneNumber2);
-
-//   if (isValid) {
-//     $("#phoneNumberError").hide();
-//   } else {
-//     $("#phoneNumberError").show();
-//   }
-// });
-
-// $(".supplierSelect").change(function () {
-//   selectedSupplier = $(this).find("option:selected").text();
-//   console.log("Selected Supplier: " + selectedSupplier);
-//   // populateTable(selectedLabour);
-// });
-
+// Suppliers
 let product = "";
 let countySelect2 = "";
 $(".supplierSelect2").change(function () {
@@ -773,31 +754,49 @@ $(".countySelect2").change(function () {
   console.log("Selected County: " + countySelect2);
 });
 
+// Supplier signup form
 $("#signup-form2").on("submit", function (event) {
   event.preventDefault();
 
-  var phoneNumberSuppliers = $("#phoneNumber").val();
+  // Phone number validation
+  var phoneNumberSuppliers = $("#phoneNumberSuppliers").val();
   var phoneNumberPatternSuppliers = /^07\d{8}$/;
-  var isValid2 = phoneNumberPatternSuppliers.test(phoneNumberSuppliers);
+  var isValidPhoneNumber =
+    phoneNumberPatternSuppliers.test(phoneNumberSuppliers);
 
-  // if (!isValid2) {
-  //   $("#phoneNumberError2").show();
-  // } else {
-  //   $("#phoneNumberError2").hide();
+  // Email validation
+  const emailInput = $("#emailSuppliers")[0]; // Ensure you have an input field with id="emailSuppliers"
+  const emailError = $("#emailError"); // Ensure you have an error message element with id="emailError"
+  if (!emailInput.checkValidity()) {
+    emailError.show(); // Show error if email is invalid
+    return; // Prevent form submission if email is invalid
+  } else {
+    emailError.hide(); // Hide error if email is valid
+  }
 
+  // Show phone number error if invalid
+  if (!isValidPhoneNumber) {
+    $("#phoneNumberError2").show(); // Show error for phone number
+    return; // Prevent further processing if phone number is invalid
+  } else {
+    $("#phoneNumberError2").hide(); // Hide phone number error
+  }
+
+  // Get supplier data
   const supplierName = $("#supplierName").val();
-  console.log(supplierName);
   const supplierContact = $("#phoneNumberSuppliers").val();
-  console.log(supplierContact);
+  console.log(supplierName, supplierContact);
 
   const data2 = {
     Name: supplierName,
     Field: product,
     Location: countySelect2,
     Contact: supplierContact,
+    Email: emailInput.value, // Add email to the data object
   };
   console.log("Data to be sent:", data2);
 
+  // AJAX request for supplier signup
   $.ajax({
     url: "http://localhost:3000/signup-suppliers",
     type: "POST",
@@ -812,6 +811,5 @@ $("#signup-form2").on("submit", function (event) {
       alert("Supplier Sign up failed");
     },
   });
-  // }
 });
 

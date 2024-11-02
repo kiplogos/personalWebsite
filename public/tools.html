@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Jersey+25+Charted&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
 
 </head>
   <body>
@@ -18,13 +19,13 @@
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Everyday Tools</a>
+    <a class="navbar-brand" href="/">Everyday Tools</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Everyday Tools</h5>
+         <a class="navbar-brand offcanvas-title" id="offcanvasDarkNavbarLabel" href="/">Everyday Tools</a>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -49,15 +50,18 @@
           <li>
             <a class="nav-link active tool3" aria-current="page" href="#">Calculate Rebar Weight</a>
           </li>
-                    <li>
+          <li>
             <a class="nav-link active tool4" aria-current="page" href="#">Useful Contacts</a>
+          </li>
+          <li>
+            <a class="nav-link active tool4" aria-current="page" href="#">Job Board</a>
+          </li>
+          <li>
+            <a class="nav-link active tool4" aria-current="page" href="#">Fundi Profiles</a>
           </li>
 
         </ul>
-        <!-- <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-success" type="submit">Search</button>
-        </form> -->
+
       </div>
     </div>
   </div>
@@ -65,15 +69,105 @@
 
 
 
-<div class="container">
+<div class="container welcomeDiv">
   <div class="row1">
     <div class="intro">
 <h3 class="welcome">Welcome To Everyday Tools</h3>
     <br>
-    <!-- <h4>These may help you somehow</h4>
-    <span>Bottom Text</span> -->
-
+    <br><br>
+        <div class="intro2">
+          <button type="button" class="welcomeButton btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign Up</button>
+    <h2 style="margin-bottom: 50px;">Save time by using our tools for your construction project</h2>
+   </div>
     </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Sign Up</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section class="vh-100">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+<!-- 
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p> -->
+                <!-- <h2>Sign Up</h2> -->
+
+                <form class="mx-1 mx-md-4">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" />
+                      <label class="form-label" for="form3Example1c">Your Name</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" />
+                      <label class="form-label" for="form3Example3c">Your Email</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4c" class="form-control" />
+                      <label class="form-label" for="form3Example4c">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4cd" class="form-control" />
+                      <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                    </div>
+                  </div>
+
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        
+    </div>
+  </div>
+</section>
+
+      </div>
+      <div class="modal-footer">
+        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-success btn-lg">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
 
     
 <!-- Steel Estimator -->
@@ -738,7 +832,7 @@
         <div class="form-group">
           <label for="product">Service offered/Trade:</label>
            <select class="form-select form-select-sm supplierSelect2" aria-label="Small select example">
-            <option selected>Select Supplier:</option>
+            <option selected>Select Supplier Type:</option>
   <option value="1">Adhesives and Sealants</option>
   <option value="2">Aggregates</option>
   <option value="3">Cabro Pavements</option>
@@ -842,6 +936,23 @@
           <input type="text" id="phoneNumberSuppliers" name="phoneNumber" pattern="07\d{8}" maxlength="10" required placeholder="E.g., 0712345678" />
           <small class="phoneNumberError2" id="phoneNumberError2" style="color: red; display: none;">Invalid phone number. Please enter a number in the format: 0712345678</small>
         </div>
+        
+        <div class="form-group">
+  <label for="emailSuppliers">Email Address:</label>
+  <input 
+    type="email" 
+    id="emailSuppliers" 
+    name="Email" 
+    required 
+    placeholder="E.g., example@email.com"
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+
+  />
+  <small class="emailError" id="emailError" style="color: red; display: none;">Invalid email format. Please enter a valid email address (e.g., example@email.com).</small>
+</div>
+
+
+
         <button type="submit" class="formSubmit">Sign Up</button>
       </form>
        </div>
@@ -984,12 +1095,44 @@
 
   </div>
 </form>
+
+
+
 </div>
 
 
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-2 border-top">
+    
+
+    <div class="col-md-4">
+      <p class="mb-0 text-body-secondary">&copy; 2024 Everyday Tools.co.ke</p> 
+      <p class="mb-0 text-body-secondary">87 Junction, Muhuri Road</p>
+      <p class="mb-0 text-body-secondary">P.O.BOX 680 - 20200</p> 
+      <p class="mb-0 text-body-secondary">+254 718 840 955</p> 
+      <a href="mailto:info@everydaytools.co.ke">info@everydaytools.co.ke</a>
 
 
 
+
+
+
+    </div>
+
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+    </a>
+
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+    
+  </footer>
+</div>
 
 
     <!-- jQuery -->
