@@ -4,6 +4,8 @@ import path from "path";
 import mongoose from "mongoose";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import bcrypt from "bcrypt";
+import { check, validationResult } from "express-validator";
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -33,6 +35,21 @@ mongoose
     console.error("Failed to connect to MongoDB", err);
     process.exit(1); // Exit process on connection failure
   });
+
+// Define visitors schema
+const visitorSchema = new mongoose.Schema({
+  Name: String,
+  Email: {
+    type: String,
+    required: true,
+    unique: true, // Ensure email uniqueness
+  },
+  Password: String,
+  repeatedPassword: String,
+});
+
+// Create Visitor model
+const Visitor = mongoose.model("Visitor", visitorSchema);
 
 // Define labourers schema
 const userSchema = new mongoose.Schema({
@@ -117,6 +134,56 @@ app.post("/signup-labour", async (req, res) => {
     res.status(500).json({ message: "Sign up failed" });
   }
 });
+
+// Define route with validation (optional)
+app.post(
+  "/signup-visitors",
+  [
+    // Server-side validation (optional, requires express-validator)
+    check("Email").isEmail().withMessage("Invalid email format"),
+    check("Contact")
+      .matches(/^07\d{8}$/)
+      .withMessage("Invalid contact number"),
+    check("Password")
+      .isLength({ min: 6 })
+      .withMessage("Password must be at least 6 characters"),
+  ],
+  async (req, res) => {
+    const { Name, Contact, Email, Password } = req.body;
+
+    // Handle validation errors (if using express-validator)
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(Password, 10);
+
+      // Create a new visitor instance with hashed password
+      const visitor = new Visitor({
+        Name,
+        Contact,
+        Email,
+        Password: hashedPassword,
+      });
+
+      // Save the visitor to the database
+      await visitor.save();
+      console.log("Visitor saved:", { Name, Contact, Email });
+
+      res.json({ message: "Visitor sign up successful!" });
+    } catch (err) {
+      console.error("Failed to save visitor", err);
+      res.status(500).json({ message: "Sign up failed" });
+    }
+  }
+);
+
+
+
+
 
 // Handle POST requests to /signup-suppliers
 app.post("/signup-suppliers", async (req, res) => {

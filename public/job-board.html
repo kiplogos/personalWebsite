@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles3.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Jersey+25+Charted&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">M-JENGO</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Help</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+ <div class="container ">
+  <div class="row">
+    <div class="col-12 col-md-5 leftDiv">
+      Column 1
+      <div class="row">
+      <h1>Search for jobs</h1>
+          <div class="col-sm-10">
+        <select class=" form-select form-select-sm projectLocation" id="projectLocation" >
+              <option selected>Filter by Location:</option>
+    <option value="1">Baringo</option>
+    <option value="2">Bomet</option>
+    <option value="3">Bungoma</option>
+    <option value="4">Busia</option>
+    <option value="5">Elgeyo-Marakwet</option>
+    <option value="6">Embu</option>
+    <option value="7">Garissa</option>
+    <option value="8">Homa Bay</option>
+    <option value="9">Isiolo</option>
+    <option value="10">Kajiado</option>
+    <option value="11">Kakamega</option>
+    <option value="12">Kericho</option>
+    <option value="13">Kiambu</option>
+    <option value="14">Kilifi</option>
+    <option value="15">Kirinyaga</option>
+    <option value="16">Kisii</option>
+    <option value="17">Kisumu</option>
+    <option value="18">Kitui</option>
+    <option value="19">Kwale</option>
+    <option value="20">Laikipia</option>
+    <option value="21">Lamu</option>
+    <option value="22">Machakos</option>
+    <option value="23">Makueni</option>
+    <option value="24">Mandera</option>
+    <option value="25">Marsabit</option>
+    <option value="26">Meru</option>
+    <option value="27">Migori</option>
+    <option value="28">Mombasa</option>
+    <option value="29">Murang'a</option>
+    <option value="30">Nairobi</option>
+    <option value="31">Nakuru</option>
+    <option value="32">Nandi</option>
+    <option value="33">Narok</option>
+    <option value="34">Nyamira</option>
+    <option value="35">Nyandarua</option>
+    <option value="36">Nyeri</option>
+    <option value="37">Samburu</option>
+    <option value="38">Siaya</option>
+    <option value="39">Taita-Taveta</option>
+    <option value="40">Tana River</option>
+    <option value="41">Tharaka-Nithi</option>
+    <option value="42">Trans Nzoia</option>
+    <option value="43">Turkana</option>
+    <option value="44">Uasin Gishu</option>
+    <option value="45">Vihiga</option>
+    <option value="46">Wajir</option>
+    <option value="47">West Pokot</option>
+        </select>
+    </div>
+    
+      </div>
+
+      <div class="row">
+    <!-- <label for="jobType" class="col-sm-2 col-form-label">Job Type:</label> -->
+    <div class="col-sm-10 tradeSelection">
+        <select class=" form-select form-select-sm tradeSelect" id="tradeSelect" >
+          <option selected>Select Trade:</option>
+          <option value="1">3D Printing/Renders</option>
+          <option value="2">A/C & Mechanical Works</option>
+          <option value="3">Alucobond Installation</option>
+          <option value="4">Audio Solutions</option>
+          <option value="5">Biodigesters</option>
+          <option value="6">Borehole Drilling</option>
+          <option value="7">Bulk SMS Marketing</option>
+          <option value="8">Cabro/Pavement</option>
+          <option value="9">Carpenter</option>
+          <option value="10">Cleaning Services</option>
+          <option value="11">ClearView Fence</option>
+          <option value="12">CCTV Installation</option>
+          <option value="13">Container Fabrication</option>
+          <option value="14">Corian Installation</option>
+          <option value="15">County Approvals</option>
+          <option value="16">CNC Machine</option>
+          <option value="17">Elevator Suppliers</option>
+          <option value="18">EPS</option>
+          <option value="19">Electricians</option>
+          <option value="20">Fire Suppression Systems</option>
+          <option value="21">Formwork</option>
+          <option value="22">Feasibility Study</option>
+          <option value="23">Generator Hire and Sales</option>
+          <option value="24">Geotechnical Survey</option>
+          <option value="25">Granite</option>
+          <option value="26">Gypsum Board/Drywall</option>
+          <option value="27">Heavy Equipment/Excavations</option>
+          <option value="28">Interior Designers</option>
+          <option value="29">Interior Design</option>
+          <option value="30">Joinery-Cabinets/Wardrobes</option>
+          <option value="31">Kitchen Fabrication</option>
+          <option value="32">Land Valuers</option>
+          <option value="33">Landscapers</option>
+          <option value="34">LPG Systems</option>
+          <option value="35">Light Gauge Steel Construction</option>
+          <option value="36">Mazeras Installation</option>
+          <option value="37">MEP Services</option>
+          <option value="38">Moulding</option>
+          <option value="39">NCA Contractor Training</option>
+          <option value="40">NEMA Approvals</option>
+          <option value="41">NEMA Asbestos Disposal Vendor</option>
+          <option value="42">Plumbers</option>
+          <option value="43">Plaster Subcontractors</option>
+          <option value="44">Portable Toilet</option>
+          <option value="45">Precast Concrete</option>
+          <option value="46">Roofing Contractors</option>
+          <option value="47">Rubber Coin Carpets</option>
+          <option value="48">Safety Consultants</option>
+          <option value="49">Scaffolding/Trappers</option>
+          <option value="50">Screeding</option>
+          <option value="51">Shotcrete</option>
+          <option value="52">Shower Cubicles</option>
+          <option value="53">Signage/Graphics/Large Format Printing</option>
+          <option value="54">Solar Power Installation</option>
+          <option value="55">Stainless Steel Fabrication</option>
+          <option value="56">Steel Fabrication</option>
+          <option value="57">Steel Fixers</option>
+          <option value="58">Steel Lockers/Cabinets</option>
+          <option value="59">Spray Painting</option>
+          <option value="60">Tent/Canvas Installer</option>
+          <option value="61">Tiling</option>
+          <option value="62">Transport</option>
+          <option value="63">Tools Hire</option>
+          <option value="64">Tools Repair</option>
+          <option value="65">Waterproofing</option>
+          <option value="66">Water Pump Installation</option>
+          <option value="67">Wall Art</option>
+          <option value="68">Wood Floors</option>
+          <option value="69">Stucco Wall Finish</option>
+          <option value="70">Swimming Pools/Saunas</option>
+        </select>
+  </div>
+  <div class="d-grid gap-2 row">
+    <div class="col col-md-6">
+  <button class="btn btn-outline-success showJobs" type="button">Filter</button>
+
+    </div>
+</div>
+
+  <div class="scrollable">
+  <div class="card" style="width: 24em;">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text"></p>
+    <a href="#" class="card-link"></a>
+    <a href="#" class="card-link"></a>
+  </div>
+  <div class="pagination-container">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous" id="prevPage">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item active" id="page-1">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item" id="page-2">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item" id="page-3">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next" id="nextPage">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+</div>
+
+
+
+  </div>
+
+      </div>
+
+      <!-- <hr>
+      <div class="row">
+      <h1>Best matching jobs for you</h1>
+      </div> -->
+    </div>
+
+    <div class="col-12 col-md-5 middleDiv">
+      Column 2 
+<div class="d-grid gap-2">
+  <button class="btn btn-outline-success createJob" type="button">Create a job listing</button>
+</div>
+<hr>
+
+<div class="jobListingDiv" style="display: none;">
+  <form action="/create-job">
+    <div class="row mb-3" >
+    <label for="inputClientName" class="col-sm-2 col-form-label">Client Name:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputClientName"  placeholder="Client/Company name">
+    </div>
+  </div>
+
+  <div class="row mb-3" >
+    <label for="inputClientContact" class="col-sm-2 col-form-label">Contact:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputClientContact"  placeholder="Phone Number: ">
+    </div>
+  </div>
+  <div class="row mb-3" >
+    <label for="inputClientEmail" class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputClientEmail"  placeholder="Email: ">
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <label for="inputProjectLocation" class="col-sm-2 col-form-label">Project Location:</label>
+    <div class="col-sm-10">
+        <select class=" form-select form-select-sm inputProjectLocation" id="inputProjectLocation" >
+              <option selected>Filter by Location:</option>
+<option value="1">Baringo</option>
+    <option value="2">Bomet</option>
+    <option value="3">Bungoma</option>
+    <option value="4">Busia</option>
+    <option value="5">Elgeyo-Marakwet</option>
+    <option value="6">Embu</option>
+    <option value="7">Garissa</option>
+    <option value="8">Homa Bay</option>
+    <option value="9">Isiolo</option>
+    <option value="10">Kajiado</option>
+    <option value="11">Kakamega</option>
+    <option value="12">Kericho</option>
+    <option value="13">Kiambu</option>
+    <option value="14">Kilifi</option>
+    <option value="15">Kirinyaga</option>
+    <option value="16">Kisii</option>
+    <option value="17">Kisumu</option>
+    <option value="18">Kitui</option>
+    <option value="19">Kwale</option>
+    <option value="20">Laikipia</option>
+    <option value="21">Lamu</option>
+    <option value="22">Machakos</option>
+    <option value="23">Makueni</option>
+    <option value="24">Mandera</option>
+    <option value="25">Marsabit</option>
+    <option value="26">Meru</option>
+    <option value="27">Migori</option>
+    <option value="28">Mombasa</option>
+    <option value="29">Murang'a</option>
+    <option value="30">Nairobi</option>
+    <option value="31">Nakuru</option>
+    <option value="32">Nandi</option>
+    <option value="33">Narok</option>
+    <option value="34">Nyamira</option>
+    <option value="35">Nyandarua</option>
+    <option value="36">Nyeri</option>
+    <option value="37">Samburu</option>
+    <option value="38">Siaya</option>
+    <option value="39">Taita-Taveta</option>
+    <option value="40">Tana River</option>
+    <option value="41">Tharaka-Nithi</option>
+    <option value="42">Trans Nzoia</option>
+    <option value="43">Turkana</option>
+    <option value="44">Uasin Gishu</option>
+    <option value="45">Vihiga</option>
+    <option value="46">Wajir</option>
+    <option value="47">West Pokot</option>
+        </select>
+    </div>
+  </div>
+
+      <div class="row mb-3">
+    <label for="jobType" class="col-sm-2 col-form-label">Job Type:</label>
+    <div class="col-sm-10">
+        <select class=" form-select form-select-sm tradeSelected" id="tradeSelected" >
+          <option selected>Select Trade:</option>
+          <option value="1">3D Printing/Renders</option>
+          <option value="2">A/C & Mechanical Works</option>
+          <option value="3">Alucobond Installation</option>
+          <option value="4">Audio Solutions</option>
+          <option value="5">Biodigesters</option>
+          <option value="6">Borehole Drilling</option>
+          <option value="7">Bulk SMS Marketing</option>
+          <option value="8">Cabro/Pavement</option>
+          <option value="9">Carpenter</option>
+          <option value="10">Cleaning Services</option>
+          <option value="11">ClearView Fence</option>
+          <option value="12">CCTV Installation</option>
+          <option value="13">Container Fabrication</option>
+          <option value="14">Corian Installation</option>
+          <option value="15">County Approvals</option>
+          <option value="16">CNC Machine</option>
+          <option value="17">Elevator Suppliers</option>
+          <option value="18">EPS</option>
+          <option value="19">Electricians</option>
+          <option value="20">Fire Suppression Systems</option>
+          <option value="21">Formwork</option>
+          <option value="22">Feasibility Study</option>
+          <option value="23">Generator Hire and Sales</option>
+          <option value="24">Geotechnical Survey</option>
+          <option value="25">Granite</option>
+          <option value="26">Gypsum Board/Drywall</option>
+          <option value="27">Heavy Equipment/Excavations</option>
+          <option value="28">Interior Designers</option>
+          <option value="29">Interior Design</option>
+          <option value="30">Joinery-Cabinets/Wardrobes</option>
+          <option value="31">Kitchen Fabrication</option>
+          <option value="32">Land Valuers</option>
+          <option value="33">Landscapers</option>
+          <option value="34">LPG Systems</option>
+          <option value="35">Light Gauge Steel Construction</option>
+          <option value="36">Mazeras Installation</option>
+          <option value="37">MEP Services</option>
+          <option value="38">Moulding</option>
+          <option value="39">NCA Contractor Training</option>
+          <option value="40">NEMA Approvals</option>
+          <option value="41">NEMA Asbestos Disposal Vendor</option>
+          <option value="42">Plumbers</option>
+          <option value="43">Plaster Subcontractors</option>
+          <option value="44">Portable Toilet</option>
+          <option value="45">Precast Concrete</option>
+          <option value="46">Roofing Contractors</option>
+          <option value="47">Rubber Coin Carpets</option>
+          <option value="48">Safety Consultants</option>
+          <option value="49">Scaffolding/Trappers</option>
+          <option value="50">Screeding</option>
+          <option value="51">Shotcrete</option>
+          <option value="52">Shower Cubicles</option>
+          <option value="53">Signage/Graphics/Large Format Printing</option>
+          <option value="54">Solar Power Installation</option>
+          <option value="55">Stainless Steel Fabrication</option>
+          <option value="56">Steel Fabrication</option>
+          <option value="57">Steel Fixers</option>
+          <option value="58">Steel Lockers/Cabinets</option>
+          <option value="59">Spray Painting</option>
+          <option value="60">Tent/Canvas Installer</option>
+          <option value="61">Tiling</option>
+          <option value="62">Transport</option>
+          <option value="63">Tools Hire</option>
+          <option value="64">Tools Repair</option>
+          <option value="65">Waterproofing</option>
+          <option value="66">Water Pump Installation</option>
+          <option value="67">Wall Art</option>
+          <option value="68">Wood Floors</option>
+          <option value="69">Stucco Wall Finish</option>
+          <option value="70">Swimming Pools/Saunas</option>
+        </select>
+
+    </div>
+  </div>
+
+      <div class="row mb-3">
+    <label for="jobDescription" class="col-sm-2 col-form-label">Job Description:</label>
+    <div class="col-sm-10">
+      <label for="jobDescription"></label>
+      <textarea name="jobDescription" id="jobDescription"class="jobDescription" maxlength="250" placeholder="Describe the project in more detail. Max 250 characters."></textarea>
+    </div>
+  </div>
+  <div class="d-grid gap-2">
+  <button class="btn btn-outline-success submitJob" type="button">Submit</button>
+</div>
+
+
+
+
+  </form>
+
+</div>
+
+
+
+
+    </div>
+    <div class="col-12 col-md-2 rightDiv">
+      Column 3
+      <div class="row">
+        <h4>Articles</h4>
+      </div>
+      <div class="row">
+        <a href="">How does M-Jengo Work</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <div class="row">
+    <div class="col-12 col-md-4">
+          <a class="navbar-brand" href="#">M-JENGO</a>
+          <h6>P.O.Box 682-20200,</h6>
+          <h6>Kericho.</h6>
+          <h6>Phone: 0718840955.</h6>
+    </div>
+    <div class="col-12 col-md-4">
+          <h6>Links</h6>
+    </div>
+    <div class="col-12 col-md-4 footerRight">
+          <h6>Socials</h6>
+          <ul>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Github</a></li>
+          </ul>
+          
+    </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+        <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/index3.js"></script>
+
+</body>
+</html>

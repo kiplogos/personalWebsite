@@ -1,0 +1,113 @@
+.middleDiv {
+    border-left: 1px solid  rgb(185, 181, 181);
+    border-right: 1px solid rgb(185, 181, 181);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    margin: 20px 0;
+    margin-top: 30px;
+}
+
+.createJob {
+    margin-top: 30px;
+}
+
+#jobDescription {
+    margin-left: 30px;
+    width: 90%;
+}
+
+.tradeSelect {
+    margin-top: 20px;
+}
+
+.submitJob {
+    margin-bottom: 20px;
+}
+
+h6 {
+    margin-bottom: 1px;
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+.tradeSelection {
+    margin-bottom: 1em;
+}
+
+.scrollable {
+  width: 450px;        /* Fixed width */
+  height: 300px;       /* Fixed height */
+  overflow: auto;      /* Add scrollbar only if content overflows */
+  padding: 10px;       /* Optional: Add padding inside the div */
+}
+
+.card {
+  width: 100px;
+}
+
+.showJobs {
+    margin-bottom: 20px;
+}
+
+.pagination-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination {
+  display: inline-flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25rem;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .25rem;
+}
+
+.page-link:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #ddd;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.page-item a {
+  text-decoration: none;
+}
+
+.page-item a:focus {
+  outline: none;
+}

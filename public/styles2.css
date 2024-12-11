@@ -228,7 +228,9 @@ h2 {
 .h25 {
   margin-top: 20px;
 }
-
+.h12 {
+  margin-top: 250px;
+}
 .signUpDiv label {
   display: block;
   margin-bottom: 5px;
@@ -497,7 +499,7 @@ label {
 }
 
 .welcomeButton {
-   margin-top: 100px;
+   margin-top: 30px;
    margin-bottom: 50px;
     background-color: #5c9ae6; /* Primary blue color */
   color: white; /* Text color */
@@ -553,3 +555,60 @@ margin-left: 5px;
   color: #ffe082;
 }
 
+.form-check {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  .modal-body {
+    height: auto; /* or another desired fixed height */
+    max-height: 100vh; /* Ensures the modal does not exceed 80% of viewport height */
+  }
+}
+@media (min-width: 992px) {
+  .modal-content {
+    max-height: 100vh; /* Ensures the modal content does not exceed 90% of the viewport height */
+    overflow-y: auto; /* Allows scrolling if the content exceeds max-height */
+  }
+}
+.modal-body {
+  padding-bottom: 0px; /* Adjust padding as needed */
+}
+
+
+.fundiHomepage, .clientHomepage {
+   margin-top: 25px;
+   margin-bottom: 50px;
+    background-color: #5c9ae6; /* Primary blue color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Spacing around text */
+  border: none; /* Removes default border */
+  border-radius: 5px; /* Rounded corners */
+font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.fundiHomepage, .clientHomepage {
+  background-color: #ae7fbd; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Active effect */
+.fundiHomepage, .clientHomepage:active {
+  background-color: #004080; /* Even darker blue on click */
+  transform: scale(0.95); /* Slightly shrinks when clicked */
+}
+
+/* Focus effect (for keyboard accessibility) */
+.fundiHomepage, .clientHomepage:focus {
+  outline: 3px solid #80bfff; /* Light blue outline on focus */
+}
+
+
+
+.form-label1 {
+  font-size: 50px;
+}

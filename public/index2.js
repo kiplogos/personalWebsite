@@ -8,9 +8,14 @@ var rebarWeight;
 var selectedLabour;
 
 
-$(".welcomeButton").click(function (event) {
+$(".fundiHomepage").click(function (event) {
   event.preventDefault();
-  // $(".user-signup-form").show();
+  // $(".usefulContacts").show();
+});
+
+$(".registerButton").click(function (event) {
+  event.preventDefault();
+  $(".usefulContacts").show();
 });
 
 // Tool 1: Steel Estimator
@@ -172,6 +177,8 @@ $(".tool4").click(function (event) {
     ".intro, .steelEstimator, .rebarCalculator, .display2, .concreteEstimator, .barBendingSchedule"
   ).hide();
 });
+
+// new Signups
 
 var selectedSupplier;
 
@@ -741,6 +748,99 @@ $("#signup-form").on("submit", function (event) {
     });
   }
 });
+
+//Visitors
+// Register button event for debugging
+$(".registerButton").click(function (event) {
+  event.preventDefault();
+
+  var visitorName = $("#userName").val();
+  var visitorContact = $("#userContact").val();
+  var visitorEmail = $("#userEmail").val();
+  var visitorPassword = $("#userPassword").val();
+  var visitorRepeatPassword = $("#userRepeatPassword").val();
+
+  console.log(
+    "New User Details: ",
+    visitorName,
+    visitorContact,
+    visitorEmail,
+    visitorPassword,
+    visitorRepeatPassword
+  );
+});
+processData: true,
+  // Visitor signup form
+  $("#signup-form3").on("submit", function (event) {
+    event.preventDefault();
+
+    // Retrieve form values
+    var visitorName = $("#userName").val();
+    var visitorContact = $("#userContact").val();
+    var visitorEmail = $("#userEmail").val();
+    var visitorPassword = $("#userPassword").val();
+    var visitorRepeatPassword = $("#userRepeatPassword").val();
+
+    // Phone number validation
+    var phoneNumberPatternVisitors = /^07\d{8}$/;
+    var isValidPhoneNumber2 = phoneNumberPatternVisitors.test(visitorContact);
+
+    // Email validation
+    var emailInput2 = $("#userEmail")[0];
+    var emailError2 = $("#emailError2"); // Error message element for email validation
+
+    if (!emailInput2.checkValidity()) {
+      emailError2.show(); // Show error if email is invalid
+      return; // Prevent form submission if email is invalid
+    } else {
+      emailError2.hide(); // Hide error if email is valid
+    }
+
+    // Show phone number error if invalid
+    if (!isValidPhoneNumber2) {
+      $("#phoneNumberError2").show(); // Show error for phone number
+      return; // Prevent further processing if phone number is invalid
+    } else {
+      $("#phoneNumberError2").hide(); // Hide phone number error
+    }
+
+    // Password match validation
+    if (visitorPassword !== visitorRepeatPassword) {
+      $("#passwordMatchError").show(); // Show error if passwords do not match
+      return;
+    } else {
+      $("#passwordMatchError").hide(); // Hide error if passwords match
+    }
+
+    // Data to be sent
+    const data3 = {
+      Name: visitorName,
+      Contact: visitorContact,
+      Email: visitorEmail,
+      Password: visitorPassword,
+    };
+    console.log("Data to be sent:", data3);
+
+    // AJAX request for visitor signup
+    $.ajax({
+      url: "http://localhost:3000/create-job",
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify(data3),
+      success: function (response) {
+        console.log("Success:", response);
+        alert(" Job listing created successfully!");
+      },
+      error: function (error) {
+        console.error("Error:", error);
+        alert("Error!");
+      },
+    });
+  });
+
+
+
+
 
 // Suppliers
 let product = "";
