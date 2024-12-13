@@ -111,3 +111,13 @@ a {
 .page-item a:focus {
   outline: none;
 }
+
+.navbar-brand{
+margin-left: 5px;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.1); /* Slightly enlarges the element */
+  transition: transform 0.3s ease; /* Smooth transition */
+  color: #19b0c7;
+}

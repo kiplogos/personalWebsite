@@ -10,7 +10,7 @@ var selectedLabour;
 
 $(".fundiHomepage").click(function (event) {
   event.preventDefault();
-  // $(".usefulContacts").show();
+  $(".usefulContacts").show();
 });
 
 $(".registerButton").click(function (event) {

@@ -8,14 +8,14 @@ html {
 }
 
 
-.tool1, .tool2, .tool3, .tool4, .tool5 {
+.tool1, .tool2, .tool3, .tool4, .tool5, .tool6, .tool7 {
 font-family: "Titillium Web", sans-serif;
   font-weight: 400;
   font-size: medium;
   margin-left: 15px;
 }
 
-.tool1:hover, .tool2:hover, .tool3:hover, .tool4:hover, .tool5:hover {
+.tool1:hover, .tool2:hover, .tool3:hover, .tool4:hover, .tool5:hover, .tool6:hover, .tool7:hover {
     transform: scale(1.1); 
   transition: transform 0.3s ease; 
   color: #ffe082 !important;
@@ -121,13 +121,13 @@ font-family: "Jersey 25 Charted", sans-serif;
 .labourButton {
   font-weight: bold;
   width: 50%;
-  color: white;
+  color: black;
   margin-bottom: 15px;
 }
 .suppliersButton{
     font-weight: bold;
   width: 50%;
-  color: white;
+  color: black;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -136,7 +136,7 @@ font-family: "Jersey 25 Charted", sans-serif;
 }
 
 .labourButton:hover{
-  color: black;
+  color: white;
 }
 .materialSupplierButton {
   font-weight: bold;
@@ -612,3 +612,4 @@ font-family: "Titillium Web", sans-serif;
 .form-label1 {
   font-size: 50px;
 }
+
