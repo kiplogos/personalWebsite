@@ -713,7 +713,8 @@ $("#signup-form").on("submit", function (event) {
   event.preventDefault();
 
   var phoneNumber = $("#phoneNumber").val();
-  var phoneNumberPattern = /^07\d{8}$/;
+  var phoneNumberPattern = /^(07|01)\d{8}$/;
+
   var isValid = phoneNumberPattern.test(phoneNumber);
 
   if (!isValid) {
@@ -782,7 +783,7 @@ processData: true,
     var visitorRepeatPassword = $("#userRepeatPassword").val();
 
     // Phone number validation
-    var phoneNumberPatternVisitors = /^07\d{8}$/;
+    var phoneNumberPatternVisitors = /^(07|01)\d{8}$/;
     var isValidPhoneNumber2 = phoneNumberPatternVisitors.test(visitorContact);
 
     // Email validation
@@ -838,10 +839,6 @@ processData: true,
     });
   });
 
-
-
-
-
 // Suppliers
 let product = "";
 let countySelect2 = "";
@@ -860,7 +857,7 @@ $("#signup-form2").on("submit", function (event) {
 
   // Phone number validation
   var phoneNumberSuppliers = $("#phoneNumberSuppliers").val();
-  var phoneNumberPatternSuppliers = /^07\d{8}$/;
+  var phoneNumberPatternSuppliers = /^(07|01)\d{8}$/;
   var isValidPhoneNumber =
     phoneNumberPatternSuppliers.test(phoneNumberSuppliers);
 

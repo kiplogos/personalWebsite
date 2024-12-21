@@ -121,8 +121,17 @@
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-phone fa-lg me-3 fa-fw"></i>
                         <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                          <input type="text" id="userContact" name="Contact" pattern="07\d{8}" maxlength="10" class="form-control" required placeholder="E.g., 0712345678" />
-                          <small id="phoneNumberError2" class="text-danger d-none">Invalid phone number. Please enter a number in the format: 0712345678.</small>
+<input 
+    type="text" 
+    id="userContact" 
+    name="Contact" 
+    pattern="(07|01)\d{8}" 
+    maxlength="10" 
+    class="form-control" 
+    required 
+    placeholder="E.g., 0712345678 or 0112345678" 
+    title="Enter a 10-digit number starting with 07 or 01"
+  />                          <small id="phoneNumberError2" class="text-danger d-none">Invalid phone number. Please enter a number in the format: 0712345678 or 0112345678.</small>
                         </div>
                       </div>
 
@@ -507,20 +516,26 @@
           <option value="1">3D Printing/Renders</option>
           <option value="2">A/C & Mechanical Works</option>
           <option value="3">Alucobond Installation</option>
+          <option value="74">Aluminium Works</option>
           <option value="4">Audio Solutions</option>
+          <option value="72">Automatic Garage Doors</option>
           <option value="5">Biodigesters</option>
           <option value="6">Borehole Drilling</option>
           <option value="7">Bulk SMS Marketing</option>
-          <option value="8">Cabro/Pavement</option>
+          <option value="80">Cabro Pavements</option>
+          <option value="8">Cabinetry</option>
           <option value="9">Carpenter</option>
+          <option value="77">Car Shades</option>
           <option value="10">Cleaning Services</option>
           <option value="11">ClearView Fence</option>
           <option value="12">CCTV Installation</option>
+          <option value="84">Cold Room Specialist</option>
           <option value="13">Container Fabrication</option>
           <option value="14">Corian Installation</option>
           <option value="15">County Approvals</option>
-          <option value="16">CNC Machine</option>
+          <option value="16">CNC Machine/Laser cutting</option>
           <option value="17">Elevator Suppliers</option>
+          <option value="79">Epoxy</option>
           <option value="18">EPS</option>
           <option value="19">Electricians</option>
           <option value="20">Fire Suppression Systems</option>
@@ -532,11 +547,11 @@
           <option value="26">Gypsum Board/Drywall</option>
           <option value="27">Heavy Equipment/Excavations</option>
           <option value="28">Interior Designers</option>
-          <option value="29">Interior Design</option>
           <option value="30">Joinery-Cabinets/Wardrobes</option>
           <option value="31">Kitchen Fabrication</option>
-          <option value="32">Land Valuers</option>
+          <option value="29">Land Surveyors</option>
           <option value="33">Landscapers</option>
+          <option value="32">Land Valuers</option>
           <option value="34">LPG Systems</option>
           <option value="35">Light Gauge Steel Construction</option>
           <option value="36">Mazeras Installation</option>
@@ -545,6 +560,8 @@
           <option value="39">NCA Contractor Training</option>
           <option value="40">NEMA Approvals</option>
           <option value="41">NEMA Asbestos Disposal Vendor</option>
+          <option value="75">Painters</option>
+          <option value="86">PVC Ceiling</option>
           <option value="42">Plumbers</option>
           <option value="43">Plaster Subcontractors</option>
           <option value="44">Portable Toilet</option>
@@ -558,12 +575,19 @@
           <option value="52">Shower Cubicles</option>
           <option value="53">Signage/Graphics/Large Format Printing</option>
           <option value="54">Solar Power Installation</option>
+          <option value="78">Soundproofing</option>
           <option value="55">Stainless Steel Fabrication</option>
           <option value="56">Steel Fabrication</option>
           <option value="57">Steel Fixers</option>
           <option value="58">Steel Lockers/Cabinets</option>
           <option value="59">Spray Painting</option>
+          <option value="81">SPC Flooring</option>
+          <option value="81">Stamped Concrete</option>
+          <option value="">Stone Cladding</option>
+          <option value="69">Stucco Wall Finish</option>
+          <option value="70">Swimming Pools/Saunas</option>
           <option value="60">Tent/Canvas Installer</option>
+          <option value="71">Terrazzo Installer</option>
           <option value="61">Tiling</option>
           <option value="62">Transport</option>
           <option value="63">Tools Hire</option>
@@ -572,8 +596,7 @@
           <option value="66">Water Pump Installation</option>
           <option value="67">Wall Art</option>
           <option value="68">Wood Floors</option>
-          <option value="69">Stucco Wall Finish</option>
-          <option value="70">Swimming Pools/Saunas</option>
+          
 
 <div class="pagination">
         <button id="prevButton" class="btn btn-outline-success" onclick="prevPage()">Previous</button>
@@ -654,7 +677,7 @@
           <!-- <img src="/images/construction.png" alt=""> -->
 <!-- <img src="https://loremflickr.com/550/450?random=1" /> -->
 <!-- <img src="https://picsum.photos/200/300?construction"> -->
-<img class="loremFlickr" src="https://loremflickr.com/800/450/construction" alt="Construction Image">
+<!-- <img class="loremFlickr" src="https://loremflickr.com/800/450/construction" alt="Construction Image"> -->
 
 
           <h2 class="h25" id="signUpSection">Do you provide a service in the construction industry?</h2>
@@ -683,20 +706,26 @@
               <option value="1">3D Printing/Renders</option>
               <option value="2">A/C & Mechanical Works</option>
               <option value="3">Alucobond Installation</option>
+              <option value="74">Aluminium Works</option>
               <option value="4">Audio Solutions</option>
+              <option value="72">Automatic Garage Doors</option>
               <option value="5">Biodigesters</option>
               <option value="6">Borehole Drilling</option>
               <option value="7">Bulk SMS Marketing</option>
+              <option value="80">Cabinetry</option>
               <option value="8">Cabro/Pavement</option>
               <option value="9">Carpenter</option>
+              <option value="77">Car Shades</option>
               <option value="10">Cleaning Services</option>
               <option value="11">ClearView Fence</option>
               <option value="12">CCTV Installation</option>
+              <option value="84">Cold Room Specialist</option>
               <option value="13">Container Fabrication</option>
               <option value="14">Corian Installation</option>
               <option value="15">County Approvals</option>
-              <option value="16">CNC Machine</option>
+              <option value="16">CNC Machine/Laser cutting</option>
               <option value="17">Elevator Suppliers</option>
+               <option value="79">Epoxy</option>
               <option value="18">EPS</option>
               <option value="19">Electricians</option>
               <option value="20">Fire Suppression Systems</option>
@@ -708,11 +737,11 @@
               <option value="26">Gypsum Board/Drywall</option>
               <option value="27">Heavy Equipment/Excavations</option>
               <option value="28">Interior Designers</option>
-              <option value="29">Interior Design</option>
               <option value="30">Joinery-Cabinets/Wardrobes</option>
               <option value="31">Kitchen Fabrication</option>
               <option value="32">Land Valuers</option>
               <option value="33">Landscapers</option>
+              <option value="29">Land Surveyors</option>
               <option value="34">LPG Systems</option>
               <option value="35">Light Gauge Steel Construction</option>
               <option value="36">Mazeras Installation</option>
@@ -721,6 +750,8 @@
               <option value="39">NCA Contractor Training</option>
               <option value="40">NEMA Approvals</option>
               <option value="41">NEMA Asbestos Disposal Vendor</option>
+              <option value="75">Painters</option>
+               <option value="86">PVC Ceiling</option>
               <option value="42">Plumbers</option>
               <option value="43">Plaster Subcontractors</option>
               <option value="44">Portable Toilet</option>
@@ -734,12 +765,19 @@
               <option value="52">Shower Cubicles</option>
               <option value="53">Signage/Graphics/Large Format Printing</option>
               <option value="54">Solar Power Installation</option>
+              <option value="78">Soundproofing</option>
               <option value="55">Stainless Steel Fabrication</option>
+              <option value="">Stone Cladding</option>
+              <option value="81">Stamped Concrete</option>
               <option value="56">Steel Fabrication</option>
               <option value="57">Steel Fixers</option>
               <option value="58">Steel Lockers/Cabinets</option>
               <option value="59">Spray Painting</option>
+              <option value="81">SPC Flooring</option>
+              <option value="69">Stucco Wall Finish</option>
+              <option value="70">Swimming Pools/Saunas</option>
               <option value="60">Tent/Canvas Installer</option>
+              <option value="71">Terrazzo Installer</option>
               <option value="61">Tiling</option>
               <option value="62">Transport</option>
               <option value="63">Tools Hire</option>
@@ -748,8 +786,7 @@
               <option value="66">Water Pump Installation</option>
               <option value="67">Wall Art</option>
               <option value="68">Wood Floors</option>
-              <option value="69">Stucco Wall Finish</option>
-              <option value="70">Swimming Pools/Saunas</option>
+               
               
            </select>
         </div>
@@ -810,8 +847,17 @@
         </div>
         <div class="form-group">
           <label for="phoneNumber">Phone Number:</label>
-          <input type="text" id="phoneNumber" name="phoneNumber" pattern="07\d{8}" maxlength="10" required placeholder="E.g., 0712345678" />
-          <small class="phoneNumberError" id="phoneNumberError" style="color: red; display: none;">Invalid phone number. Please enter a number in the format: 0712345678</small>
+<input 
+    type="text" 
+    id="phoneNumber" 
+    name="phoneNumber" 
+    pattern="(07|01)\d{8}" 
+    maxlength="10" 
+    class="form-control" 
+    required 
+    placeholder="E.g., 0712345678 or 0112345678" 
+    title="Enter a 10-digit number starting with 07 or 01"
+  />           <small class="phoneNumberError" id="phoneNumberError" style="color: red; display: none;">Invalid phone number. Please enter a number in the format: 0712345678</small>
         </div>
         <button type="submit" class="formSubmit">Sign Up</button>
       </form>
@@ -930,8 +976,17 @@
         </div>
         <div class="form-group">
           <label for="phoneNumberSuppliers">Phone Number:</label>
-          <input type="text" id="phoneNumberSuppliers" name="phoneNumber" pattern="07\d{8}" maxlength="10" required placeholder="E.g., 0712345678" />
-          <small class="phoneNumberError2" id="phoneNumberError2" style="color: red; display: none;">Invalid phone number. Please enter a number in the format: 0712345678</small>
+<input 
+    type="text" 
+    id="phoneNumberSuppliers" 
+    name="phoneNumber" 
+    pattern="(07|01)\d{8}" 
+    maxlength="10" 
+    class="form-control" 
+    required 
+    placeholder="E.g., 0712345678 or 0112345678" 
+    title="Enter a 10-digit number starting with 07 or 01"
+  />           <small class="phoneNumberError2" id="phoneNumberError2" style="color: red; display: none;">Invalid phone number. Please enter a number in the format: 0712345678</small>
         </div>
         
         <div class="form-group">

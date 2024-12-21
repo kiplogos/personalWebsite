@@ -37,6 +37,7 @@ mongoose
     console.log("Connected to MongoDB");
   })
   .catch((err) => {
+    nod;
     console.error("Failed to connect to MongoDB", err);
     process.exit(1);
   });
@@ -54,7 +55,11 @@ const userSchema = new mongoose.Schema({
   Name: String,
   Field: String,
   Location: String,
-  Contact: String,
+  Contact: {
+    type: String,
+    unique: true,
+    required: true,
+  },
 });
 const User = mongoose.model("User", userSchema);
 
@@ -62,7 +67,11 @@ const supplierSchema = new mongoose.Schema({
   Name: String,
   Field: String,
   Location: String,
-  Contact: String,
+  Contact: {
+    type: String,
+    unique: true,
+    required: true,
+  },
   Email: { type: String, required: true, unique: true },
 });
 const Supplier = mongoose.model("Supplier", supplierSchema);
@@ -78,6 +87,7 @@ const SteelData = mongoose.model("SteelData", steelDataSchema);
 
 const jobSchema = new mongoose.Schema(
   {
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     Name: String,
     Contact: String,
     Email: { type: String, required: true },
@@ -112,13 +122,29 @@ app.get("/steel_datas", async (req, res) => {
 // Sign up Labour
 app.post("/signup-labour", async (req, res) => {
   const { Name, Field, Location, Contact } = req.body;
-  const user = new User({ Name, Field, Location, Contact });
+
   try {
+    // Check for duplicate Contact
+    const existingUser = await User.findOne({ Contact });
+    if (existingUser) {
+      return res
+        .status(400)
+        .json({ message: "A labourer with this contact already exists." });
+    }
+
+    const user = new User({ Name, Field, Location, Contact });
     await user.save();
-    res.json({ message: "Sign up successful" });
+    res.json({ message: "Sign up successful!" });
   } catch (err) {
-    console.error("Failed to save user", err);
-    res.status(500).json({ message: "Sign up failed" });
+    // Handle unique constraint violations
+    if (err.code === 11000 && err.keyPattern?.Contact) {
+      return res
+        .status(400)
+        .json({ message: "A labourer with this contact already exists." });
+    }
+
+    console.error("Failed to save labourer:", err);
+    res.status(500).json({ message: "Sign up failed." });
   }
 });
 
@@ -127,32 +153,42 @@ app.post(
   "/signup-visitors",
   [
     check("Email").isEmail().withMessage("Invalid email format"),
-    check("Contact")
-      .matches(/^07\d{8}$/)
-      .withMessage("Invalid contact number"),
     check("Password")
       .isLength({ min: 6 })
       .withMessage("Password must be at least 6 characters"),
   ],
   async (req, res) => {
-    const { Name, Contact, Email, Password } = req.body;
+    const { Name, Email, Password } = req.body;
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+
     try {
+      // Check for duplicate Email
+      const existingVisitor = await Visitor.findOne({ Email });
+      if (existingVisitor) {
+        return res
+          .status(400)
+          .json({ message: "A visitor with this email already exists." });
+      }
+
       const hashedPassword = await bcrypt.hash(Password, 10);
-      const visitor = new Visitor({
-        Name,
-        Contact,
-        Email,
-        Password: hashedPassword,
-      });
+      const visitor = new Visitor({ Name, Email, Password: hashedPassword });
       await visitor.save();
+
       res.json({ message: "Visitor sign up successful!" });
     } catch (err) {
-      console.error("Failed to save visitor", err);
-      res.status(500).json({ message: "Sign up failed" });
+      // Handle unique constraint violations
+      if (err.code === 11000 && err.keyPattern?.Email) {
+        return res
+          .status(400)
+          .json({ message: "A visitor with this email already exists." });
+      }
+
+      console.error("Failed to save visitor:", err);
+      res.status(500).json({ message: "Sign up failed." });
     }
   }
 );
@@ -160,13 +196,25 @@ app.post(
 // Sign up Supplier
 app.post("/signup-suppliers", async (req, res) => {
   const { Name, Field, Location, Contact, Email } = req.body;
-  const supplier = new Supplier({ Name, Field, Location, Contact, Email });
+
   try {
+    // Check for duplicate Contact or Email
+    const existingSupplier = await Supplier.findOne({
+      $or: [{ Contact }, { Email }],
+    });
+    if (existingSupplier) {
+      return res.status(400).json({
+        message: "A supplier with this contact or email already exists.",
+      });
+    }
+
+    const supplier = new Supplier({ Name, Field, Location, Contact, Email });
     await supplier.save();
+
     res.json({ message: "Supplier sign up successful!" });
   } catch (err) {
-    console.error("Failed to save supplier", err);
-    res.status(500).json({ message: "Sign up failed" });
+    console.error("Failed to save supplier:", err);
+    res.status(500).json({ message: "Sign up failed." });
   }
 });
 
@@ -202,22 +250,30 @@ app.get("/users", async (req, res) => {
 });
 // Create Job
 app.post("/create-job", async (req, res) => {
-  const { Name, Contact, Email, Location, Trade, Description } = req.body;
+  const { userId, Name, Contact, Email, Location, Trade, Description } =
+    req.body;
+
   try {
-    const existingJob = await Job.findOne({ Email });
-    if (existingJob) {
-      return res
-        .status(400)
-        .json({ message: `Job with email ${Email} already exists.` });
-    }
-    const job = new Job({ Name, Contact, Email, Location, Trade, Description });
-    await job.save();
-    res.json({ message: "Job created successfully!" });
-  } catch (err) {
-    console.error("Failed to create job!", err);
-    res.status(500).json({ message: "Job creation failed!" });
+    // Create new job linked to the user
+    const newJob = new Job({
+      userId,
+      Name,
+      Contact,
+      Email,
+      Location,
+      Trade,
+      Description,
+    });
+    await newJob.save();
+
+    res.status(201).json({ message: "Job created successfully.", newJob });
+  } catch (error) {
+    console.error("Error creating job:", error);
+    res.status(500).json({ message: "Failed to create job." });
   }
 });
+
+
 
 // Get Jobs
 app.get("/jobs", async (req, res) => {
